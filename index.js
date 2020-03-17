@@ -27,7 +27,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 // this is purely done to namespace them away from your "front-end routes" (such as those created by react-router).
 app.use('/api', require('./apiRoutes')); // matches all requests to /api
 
-//handle 505
+//Express supports methods that correspond to all HTTP request methods: get, post, and so on
 app.use(function (err, req, res, next) {
     console.error(err);
     console.error(err.stack);
