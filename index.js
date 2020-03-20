@@ -1,54 +1,48 @@
 const path = require('path')
 const express = require('express')
 const app = express()
-const PORT = 3000
+const PORT = 8000
 
 
 //--------------------->Body parser <---------------------//
-
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 //--------------------->Loggin middleware morgan https://github.com/expressjs/morgan  <---------------------//
 const morgan = require('morgan');
 app.use(morgan('dev'));
 
-//--------------------->Public <---------------------//
+//--------------------->Serving javascript files, css files, and images from public folder<---------------------//
 //https://expressjs.com/en/starter/static-files.html
-//browser needs to request static assets from server, javascript files, css files, and images will be served from publi folder
-// the path that you provide to the express.static function is relative to the directory from where you launch 
-// your node process. If you run the express app from another directory, 
-// it’s safer to use the absolute path of the directory that you want to serve
 
-app.use('/static', express.static(path.join(__dirname, 'public')))
+
+// static file-serving middleware
+app.use(express.static(path.join(__dirname, '.', 'public')))
+
+app.get('*', function (req, res, next) {
+  res.sendFile(path.join(__dirname, './public/index.html'))
+})
 
 // API routes are prefixed with /api/ - 
 // this is purely done to namespace them away from your "front-end routes" (such as those created by react-router).
 app.use('/api', require('./apiRoutes')); // matches all requests to /api
 
-//Express supports methods that correspond to all HTTP request methods: get, post, and so on
+
 app.use(function (err, req, res, next) {
-    console.error(err);
-    console.error(err.stack);
-    res.status(err.status || 500).send(err.message || 'Internal server error.');
-  });
-// Because we generally want to build single-page applications (or SPAs), 
-// our server should send its index.html for any requests that don't match one of our API routes
+  console.error(err);
+  console.error(err.stack);
+  res.status(err.status || 500).send(err.message || 'Internal server error.');
+});
 
-
-app.get('*', function(req, res, next) {
-  res.sendFile(path.join(__dirname, './public/index.html'))
-})
-
-
-
-//--------------------->Setting up server<--------------------- //
+//--------------------->Starting server<--------------------- //
 // process.env.PORT  
-const startListening = () => {
+const startServer = () => {
   const server = app.listen(process.env.PORT || PORT, () =>
-    console.log(`Mixing it up on port ${PORT}`)
+    console.log(`Listening on ${PORT}`)
   )
 }
 
-startListening()
+startServer()
