@@ -1,4 +1,4 @@
-# basic_template_react
+# basic_template_express_postgresql_react
 
 
 ## Setup
