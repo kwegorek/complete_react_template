@@ -15,7 +15,7 @@ git merge template/master
 ```
 
 ## Start
-Running `npm run start start-dev` will start the page on the localhost. 
+Running `npm run start-dev` will start the page on the localhost. 
 
 
 ![]()
