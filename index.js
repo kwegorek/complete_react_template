@@ -48,5 +48,5 @@ const startServer = () => {
 ;(async () => {
   await sequelize.sync()
 
-  console.log('hello')
+  console.log('db sync')
 })(startServer())
