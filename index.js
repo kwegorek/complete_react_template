@@ -1,8 +1,9 @@
 const path = require('path')
 const express = require('express')
 const app = express()
-const sequelize = require('./db/index.js')
+const {db} = require('./db/index.js'); 
 const PORT = process.env.PORT || 8000
+// const seed = require('./seed.js'); 
 
 //--------------------->Body parser <---------------------//
 const bodyParser = require('body-parser')
@@ -45,8 +46,7 @@ const startServer = () => {
   )
 }
 
-;(async () => {
-  await sequelize.sync()
-
+(async () => {
+  await db.sync({force:true})
   console.log('db sync')
 })(startServer())
