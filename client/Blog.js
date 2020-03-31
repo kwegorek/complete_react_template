@@ -1,48 +1,55 @@
 import React from 'react'
+import {Post} from './Post'
+import {connect} from 'react-redux'
+import {gotPosts} from '../store/blogReducer'
+import {Link, withRouter} from 'react-router-dom'
 
-export const Blog = props => {
-  return (
-    <React.Fragment>
-      <div id="blog" className="content-blog-container container-uni">
-        <h1 id="blog-title">BLOG</h1>
-        <div className="blog-grid">
-          <div className=" row">
-            <div className="col-4 blog-item">
-              <img src="./board.jpg" />
-              <div>
-                <h3>Title</h3>
-                <p>hello hello</p>
-                <a className="display-more">Read more</a>
-              </div>
-            </div>
-          </div>
-          <div className=" row">
-            <div className="col-4 blog-item">
-              <img src="./board.jpg" />
-              <div>
-              <h3>Title</h3>
-                <p>hello hello</p>
-                <a className="display-more">Read more</a>
-              </div>
-            </div>
-          </div>
-          <div className=" row">
-            <div className="col-4 blog-item">
-              <img src="./board.jpg" />
-              <div>
-              <h3>Title</h3>
-                <p>hello hello</p>
-                <a className="display-more">Read more</a>
-              </div>
-            </div>
+class Blog extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {}
+  }
+
+  componentDidMount(){
+
+    let allBlogPosts = this.props.gotPosts(); 
+
+    
+  }
+
+  render() {
+  
+
+
+
+    return (
+      <React.Fragment>
+        <div id="blog" className="content-blog-container container-uni">
+          <h1 id="blog-title">BLOG</h1>
+          <div className="blog-grid">
+
+            {/* <Post /> */}
+            <a href="#contact">
+              <i id="last-caret" className="fa fa-caret-down"></i>
+            </a>
           </div>
         </div>
-        <div>
-          <a href="#contact">
-            <i id="last-caret" className="fa fa-caret-down"></i>
-          </a>
-        </div>
-      </div>
-    </React.Fragment>
-  )
+      </React.Fragment>
+    )
+  }
 }
+const mapStateToProps = state => {
+  return {
+    blogposts: state.blogposts,
+    
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    gotPosts: () => dispatch(gotPosts())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog)

@@ -3,10 +3,10 @@ const db = require('../index')
 
 
 const User = db.define("user", {
-    name: DataTypes.TEXT,
+    name: DataTypes.STRING,
     
   });
 
-// console.log(User, 'hello')
+
 
 module.exports = User

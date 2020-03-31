@@ -6,11 +6,12 @@ const {
   } = require("sequelize");
   
 const Blogpost = db.define("blogpost", {
-    title: DataTypes.TEXT,
+    title: DataTypes.STRING,
     content:DataTypes.TEXT,
-    dataDate: {
-        type: DataTypes.DATE, 
-      },
+    edited: { 
+      type: Sequelize.DATEONLY,
+      defaultValue: Sequelize.NOW
+   }
   });
 
   module.exports = Blogpost
