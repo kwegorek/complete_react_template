@@ -24,14 +24,15 @@ app.use(morgan('dev'))
 // static file-serving middleware
 app.use(express.static(path.join(__dirname, '.', 'public')))
 
-app.get('*', function(req, res, next) {
-  res.sendFile(path.join(__dirname, './public/index.html'))
-})
+
 
 // API routes are prefixed with /api/ -
 // this is purely done to namespace them away from your "front-end routes" (such as those created by react-router).
 app.use('/api', require('./apiRoutes')) // matches all requests to /api
 
+app.get('*', function(req, res, next) {
+  res.sendFile(path.join(__dirname, './public/index.html'))
+})
 app.use(function(err, req, res, next) {
   console.error(err)
   console.error(err.stack)
@@ -47,6 +48,6 @@ const startServer = () => {
 }
 
 (async () => {
-  await db.sync({force:true})
+  await db.sync({})
   console.log('db sync')
 })(startServer())
