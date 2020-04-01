@@ -1,7 +1,7 @@
 import React from 'react'
 import {Post} from './Post'
 import {connect} from 'react-redux'
-import {gotPosts} from '../store/blogReducer'
+import {gotPosts} from '../../store/blogReducer'
 import {Link, withRouter} from 'react-router-dom'
 
 class Blog extends React.Component {
@@ -11,25 +11,24 @@ class Blog extends React.Component {
     this.state = {}
   }
 
-  componentDidMount(){
-
+  componentDidMount() {
     let allBlogPosts = this.props.gotPosts(); 
 
-    
   }
 
   render() {
-  
-
-
-
+    let blogPosts = this.props.blogReducer; 
+    console.log(blogPosts, '---blogPosts')
     return (
       <React.Fragment>
         <div id="blog" className="content-blog-container container-uni">
           <h1 id="blog-title">BLOG</h1>
           <div className="blog-grid">
-
-            {/* <Post /> */}
+            {blogPosts
+              ? blogPosts.map((post, indx) => {
+                  return <Post key={indx} post={post} />
+                })
+              : null}
             <a href="#contact">
               <i id="last-caret" className="fa fa-caret-down"></i>
             </a>
@@ -41,8 +40,7 @@ class Blog extends React.Component {
 }
 const mapStateToProps = state => {
   return {
-    blogposts: state.blogposts,
-    
+    blogReducer: state.blogReducer.blogposts
   }
 }
 

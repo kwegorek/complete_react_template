@@ -1,28 +1,21 @@
 import React from 'react'
-import {Header} from './Header.js'
-import {About} from './About.js'
-import {Footer} from './Footer.js'
-import Blog from './Blog.js'
-import {Projects} from './Projects.js'
-import {Services} from './Services.js'
-import  ContactForm from './ContactForm.js'
+import {Header} from './components/Header.js'
+import {About} from './components/About.js'
+import {Footer} from './components/Footer.js'
+import Blog from './components/Blog.js'
+import {Projects} from './components/Projects.js'
+import  ContactForm from './components/ContactForm.js'
 
 
 
-export const Main = props => {
+export const Main = () => {
   return (
-    <React.Fragment>
-         <div className="main-container">
+         <div>
             <Header/>
-            <Services/>
             <About/>
-   
             <Projects/>
             <Blog/>
             <ContactForm/>
-            <Footer/>
          </div>
-
-    </React.Fragment>
   )
 }
