@@ -10,10 +10,14 @@ export const Header = (props) => {
           <br />
           <br />
           <div className="cv-btn">
-            <a className="a-download">Download CV</a>
-            <a href="#about">
-              <i className="fa fa-caret-down"></i>
-            </a>
+            <a className="a-download">Contact</a>
+            {/* <div> */}
+              {/* <a href="#about">
+                <i className="fa fa-angle-down"></i>
+              </a>
+
+            </div> */}
+          
           </div>
         </div>
       </div>

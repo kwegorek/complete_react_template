@@ -31,7 +31,7 @@ export const About = props => {
           achieve their goals.{' '}
         </p>
         <a href="#projects-href">
-          <i className="fa fa-caret-down"></i>
+          <i className="fa fa-angle-down"></i>
         </a>
       </div>
     </React.Fragment>

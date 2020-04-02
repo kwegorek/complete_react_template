@@ -23,16 +23,26 @@ class Blog extends React.Component {
       <React.Fragment>
         <div id="blog" className="content-blog-container container-uni">
           <h1 id="blog-title">BLOG</h1>
-          <div className="blog-grid">
+      <div id='blog-big-container'>
+          <div className="row-blog">
+              
             {blogPosts
               ? blogPosts.map((post, indx) => {
                   return <Post key={indx} post={post} />
                 })
               : null}
-            <a href="#contact">
-              <i id="last-caret" className="fa fa-caret-down"></i>
+            
+ 
+          
+          </div>
+          <div>
+          <a href="#contact">
+              <i id="last-caret" className="fa fa-angle-down"></i>
             </a>
           </div>
+          </div>
+          <div className='block'></div>
+          
         </div>
       </React.Fragment>
     )

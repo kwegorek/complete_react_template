@@ -7,7 +7,7 @@ export const Projects = (props) => {
       <div>
         <div className="row">
           <div className="col-4 project-item">
-            <img src="traffic_tracker.png" />
+            <img src="./img/traffic.png" />
             <p>
               Application that tracks the traffic between given points.
               TrafficTracker visualizes traffic patterns and will help you
@@ -16,7 +16,7 @@ export const Projects = (props) => {
             </p>
           </div>
           <div className="col-4 project-item">
-            <img src="shop.png" />
+            <img src="./img/shop.png" />
             <p>
               Application that tracks the traffic between given points.
               TrafficTracker visualizes traffic patterns and will help you
@@ -25,7 +25,7 @@ export const Projects = (props) => {
             </p>
           </div>
           <div className="col-4 project-item">
-            <img src="exit.png" />
+            <img src="./img/exit.png" />
             <p>
               Application that tracks the traffic between given points.
               TrafficTracker visualizes traffic patterns and will help you
@@ -37,7 +37,7 @@ export const Projects = (props) => {
       </div>
 
       <a href="#blog">
-        <i id="blog-caret" className="fa fa-caret-down"></i>
+        <i id="blog-caret" className="fa fa-angle-down"></i>
       </a>
     </div>
   )
