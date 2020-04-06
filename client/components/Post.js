@@ -19,8 +19,9 @@ export const Post = (props) => {
       </div>
 
       <div className="blog-item-content">
-        <h3 id="title-container-blog">{post.title}</h3>
-        <h5 id="edited">
+        <div className='title-edited-container'>
+        <h2 className='post-title'>{post.title}</h2>
+        <h5 >
           Last edited: <span>{post.edited}</span>
         </h5>
         <h4>
@@ -28,7 +29,12 @@ export const Post = (props) => {
             Read more
           </Link>
         </h4>
-        <p>{post.content}</p>
+        <div><p>{post.content}</p>
+          </div>
+
+        </div>
+       
+
       </div>
     </div>
   )

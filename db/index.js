@@ -22,11 +22,24 @@ const User = db.define("user", {
 });
 
 const BlogPost = db.define("blogpost", {
-  title: DataTypes.TEXT,
-  content:DataTypes.TEXT,
-  dataDate: {
-      type: DataTypes.DATE, 
-    },
+  title: {type:DataTypes.STRING
+  },
+  content:{type:DataTypes.TEXT
+  },
+  edited: { 
+    type: Sequelize.DATEONLY,
+    defaultValue: Sequelize.NOW
+ }, 
+ imageUrl: {
+  type: Sequelize.STRING,
+  defaultValue:
+    'https://unsplash.com/photos/oI6zrBj3nKw'
+},
+tag: {
+  type: Sequelize.ARRAY(Sequelize.STRING),
+  defaultValue: ['all']
+},
 });
+
 
 module.exports =  {db, User, BlogPost}

@@ -5,6 +5,7 @@ import {Footer} from './components/Footer.js'
 import Blog from './components/Blog.js'
 import {Projects} from './components/Projects.js'
 import  ContactForm from './components/ContactForm.js'
+import {Services} from './Services'
 
 
 
@@ -12,10 +13,15 @@ export const Main = () => {
   return (
          <div>
             <Header/>
-            <About/>
-            <Projects/>
-            <Blog/>
-            <ContactForm/>
+            {/* <Projects/>
+            <ContactForm/> */}
+        
+            {/* <Blog/> */}
+            {/* <Services/> */}
+            {/* <About/> */}
+            {/* <Projects/>
+            // <Blog/>
+            <ContactForm/> */}
          </div>
   )
 }

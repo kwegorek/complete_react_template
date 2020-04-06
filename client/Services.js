@@ -7,10 +7,10 @@ export const Services = (props) => {
       <ul className='list-items-service'>
         <li className='service-item'>
           <div className='pic-container'>
-            <i className='fa fa-pencil' id= 'pencil'></i>
+            <i className='fa fa-area-chart' id= 'pencil'></i>
           </div>
           <div className='text-service-container'>
-            <h1>Developement</h1>
+            <h1>Planning</h1>
             <p></p>
           </div>
         </li>
@@ -26,10 +26,10 @@ export const Services = (props) => {
         </li>
         <li className='service-item'>
           <div className='pic-container'>
-            <i className='fa fa-pencil' id= 'pencil'></i>
+            <i className='fa fa-lightbulb-o' id= 'pencil'></i>
           </div>
           <div className='text-service-container'>
-            <h1>Developement</h1>
+            <h1>Creativity</h1>
             <p></p>
           </div>
         </li>

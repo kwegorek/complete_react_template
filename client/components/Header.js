@@ -1,4 +1,5 @@
 import React from 'react'
+import {Footer} from './Footer'
 
 export const Header = (props) => {
   return (
@@ -20,7 +21,32 @@ export const Header = (props) => {
           
           </div>
         </div>
+        <div className='footer-main'>
+       
+          <div className="footer-item">
+            {' '}
+            <a href="#" className="fa">Linkedin </a>
+          </div>
+          <div className="footer-item">
+            {' '}
+            <a
+              href="https://www.linkedin.com/in/katarzyna-wegorek"
+              className="fa"
+            >Medium</a>
+          </div>
+          <div className="footer-item">
+            <a
+              href="https://github.com/kwegorek"
+              className="fa"
+            >GitHub</a>
+          </div>
+        </div>
+   
+
+        </div>
+           
       </div>
-    </div>
+      
+
   )
 }

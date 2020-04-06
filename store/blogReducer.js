@@ -6,7 +6,7 @@ const GET_BLOG_STATE = 'GET_BLOG_STATE'
 /**
  * INITIAL STATE
  */
-const initialState = []
+const initialState = {blogposts:[]}
 
 
 /**
@@ -22,9 +22,9 @@ export const getPosts = posts => ({
 export const gotPosts = () => async dispatch => {
     console.log( 'posts----------------------------')
  try {
-   const data = await axios.get('/api/blogposts')
-   console.log(data, '----')
-//    dispatch(getPosts(data)); 
+   const {data} = await axios.get('/api/blogposts'); 
+   console.log(data, 'data')
+   dispatch(getPosts(data)); 
   
    return data
  } catch (err) {
@@ -32,7 +32,7 @@ export const gotPosts = () => async dispatch => {
  }
 }
 
-console.log('-----------')
+
 
 
 
@@ -42,7 +42,7 @@ console.log('-----------')
 export default function blogReducer(state = initialState, action) {
   switch (action.type) {
     case GET_BLOG_STATE:
-      return {blogposts: action.posts}
+      return  {...state, blogposts: action.posts}
     default:
         return state}
   }

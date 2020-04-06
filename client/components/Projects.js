@@ -1,11 +1,12 @@
 import React from 'react'
+import {Footer} from './Footer'
 
 export const Projects = (props) => {
   return (
     <div id="projects-href" className="content-project-container">
-      <h1>PROJECTS</h1>
+      <h1 className='project-title'>PROJECTS</h1>
       <div>
-        <div className="row">
+        <div className="row-projects">
           <div className="col-4 project-item">
             <img src="./img/traffic.png" />
             <p>
@@ -36,9 +37,10 @@ export const Projects = (props) => {
         </div>
       </div>
 
-      <a href="#blog">
+      <a href="/">
         <i id="blog-caret" className="fa fa-angle-down"></i>
       </a>
+
     </div>
   )
 }

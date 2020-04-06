@@ -3,6 +3,7 @@ import {Post} from './Post'
 import {connect} from 'react-redux'
 import {gotPosts} from '../../store/blogReducer'
 import {Link, withRouter} from 'react-router-dom'
+import AddBlogPost from './AddBlogPost'
 
 class Blog extends React.Component {
   constructor(props) {
@@ -12,51 +13,50 @@ class Blog extends React.Component {
   }
 
   componentDidMount() {
-    let allBlogPosts = this.props.gotPosts(); 
-
+    let allBlogPosts = this.props.gotPosts()
   }
 
   render() {
-    let blogPosts = this.props.blogReducer; 
+    let blogPosts = this.props.blogReducer
     console.log(blogPosts, '---blogPosts')
     return (
       <React.Fragment>
         <div id="blog" className="content-blog-container container-uni">
-          <h1 id="blog-title">BLOG</h1>
-      <div id='blog-big-container'>
-          <div className="row-blog">
-              
-            {blogPosts
-              ? blogPosts.map((post, indx) => {
-                  return <Post key={indx} post={post} />
-                })
-              : null}
-            
- 
-          
-          </div>
           <div>
-          <a href="#contact">
-              <i id="last-caret" className="fa fa-angle-down"></i>
-            </a>
+          <h1 id="blog-title"><span>POSTS</span></h1>
+          <div><Link to='/blog/addpost' style={{ textDecoration: 'none', color: 'black', padding:'5px' }}><i className="fa fa-plus-circle" aria-hidden="true"></i></Link><span>Add Post</span></div>
+        
+          <div>
+            </div>
+            </div>
+            <div className="row-blog">
+              {blogPosts
+                ? blogPosts.map((post, indx) => {
+                    return <Post key={indx} post={post} />
+                  })
+                : null}
+            </div>
+            <div>
+              <a href="#contact">
+                <i id="last-caret" className="fa fa-angle-down"></i>
+              </a>
+            </div>
+      
           </div>
-          </div>
-          <div className='block'></div>
-          
-        </div>
+        
       </React.Fragment>
     )
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    blogReducer: state.blogReducer.blogposts
+    blogReducer: state.blogReducer.blogposts,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    gotPosts: () => dispatch(gotPosts())
+    gotPosts: () => dispatch(gotPosts()),
   }
 }
 
