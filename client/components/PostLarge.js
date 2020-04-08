@@ -1,7 +1,7 @@
 import React from 'react'
 import {Post} from './Post'
 import {connect} from 'react-redux'
-import {gotPosts} from '../../store/blogReducer'
+import {gotPosts, getOnePostThunk} from '../../store/blogReducer'
 import {Link, withRouter} from 'react-router-dom'
 
 class PostLarge extends React.Component {
@@ -11,21 +11,44 @@ class PostLarge extends React.Component {
     this.state = {}
   }
 
-  componentWilUpdate(){
+  componentDidMount(){
+
+    this.props.gotPosts()
 
   }
 
   render() {
 
-    let postToDisplay = this.props.match.params.id
- 
+    let id = this.props.match.params.id; 
+   let filtered = this.props.blogReducer.filter(function(el){if(el.id == Number(id)){return el}});
+    let post = filtered[0]
     return (
-        <div className='blog-posts-container'>
-          {postToDisplay ?  (<div>
-            <h1>NUmber:{postToDisplay}</h1>
-          <h1>hello</h1></div> ): null}
-           
+      <React.Fragment>
+
+     
+      {post ? (
+      <div id="blog-item-id" className="col-4 blog-item ">
+      <div>
+        <img className="blog-pic" src="./img/milky-way-2695569_640.jpg" />
+      </div>
+
+      <div className="blog-item-content">
+        <div className='title-edited-container'>
+        <h2 className='post-title'>{post.title}</h2>
+        <h5 className='post-tag'>{post.tag}</h5>
+        <h5 >
+          Last edited: <span>{post.edited}</span>
+        </h5>
+
+        <div><p>{post.content}</p>
+          </div>
+
         </div>
+       
+
+      </div>
+    </div>) : null}
+    </React.Fragment>
       
         
     )
@@ -33,13 +56,13 @@ class PostLarge extends React.Component {
 }
 const mapStateToProps = state => {
   return {
-    // blogReducer: state.blogReducer.blogposts
+    blogReducer: state.blogReducer.blogposts
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    // gotPosts: () => dispatch(gotPosts())
+    gotPosts: () => dispatch(gotPosts())
   }
 }
 

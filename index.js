@@ -48,6 +48,6 @@ const startServer = () => {
 }
 
 (async () => {
-  await db.sync()
+  await db.sync({force:true})
   console.log('db sync')
 })(startServer())

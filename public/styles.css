@@ -22,10 +22,22 @@ html {
      
       }
 
+
+      .fa-home{
+        font-size: 25px;
+      }
+
       .main-container{
         width:100%; 
         margin: auto;
 
+      }
+
+      .navbar-home{
+   
+        justify-self: flex-start;
+        margin-right: auto;
+        
       }
       #banner-visibility-text{
         /* background-color: #fff; */
@@ -49,27 +61,35 @@ html {
           .form-inputs{
             display: flex;
             flex-direction: column;
+            justify-content: center;
       
           }
-          .blog-item-add label{
+          .blog-item-add {
             background-color: yellow;
-            width:100px;
-            text-align: center;
-            margin:5px;
+            width:100%;
+            padding: 20px;
+            /* text-align: center; */
+      
 
           }
-          .blog-item-input{
+          /* .blog-item-input{
             background-color: violet;
             width:50%;
             padding: 10px;
             margin:5px;
             font-size: 17px;
-          }
+          } */
           .btn-add{
             padding: 10px;
             margin:5px;
          
 
+          }
+
+          #add-content-textarea{
+            width:95%; 
+            height:600px
+            
           }
     
   /* ###--------------------------blogpost container styling--------------------------### */
@@ -112,6 +132,14 @@ html {
 
       } 
 
+
+      .about-backto-homepage{
+        padding:60px; 
+        font-size: 20px;
+        line-height: 1.2em;
+        
+      }
+
       #nav-container .blog-link{
         margin-right:60%;
       }
@@ -126,6 +154,7 @@ html {
         height: 10vh;
    
       }
+
       footer .fa:hover {
         opacity: 0.7;
         background: white;
@@ -565,6 +594,23 @@ html {
 
    
     }
+
+    .add-post-container{
+      display:flex; 
+      flex-direction: column;
+      justify-content: center;
+      margin: 15px;
+    }
+
+    .blog-post-title-add{
+
+    }
+
+    .blog-post-content-text-area{
+      width:100%;
+    }
+
+
   
 
   
@@ -596,6 +642,13 @@ html {
 
       .nav-item{
         text-align: center;
+      }
+
+      .navbar-home{
+   
+        justify-self: center;
+        margin: auto;
+        
       }
 
   

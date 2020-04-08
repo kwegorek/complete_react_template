@@ -1,4 +1,5 @@
 import React from 'react'
+import { GoBackHome } from './GoBackHome'
 
 export default class ContactForm extends React.Component {
   constructor() {
@@ -41,6 +42,11 @@ export default class ContactForm extends React.Component {
               </button>
             </div>
           </div>
+          <div>
+          <GoBackHome/>
+
+          </div>
+    
         </div>
       </React.Fragment>
     )

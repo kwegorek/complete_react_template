@@ -1,5 +1,7 @@
 import React from 'react'
 import {Footer} from './Footer'
+import { GoBackHome } from './GoBackHome'
+
 
 export const Projects = (props) => {
   return (
@@ -37,9 +39,7 @@ export const Projects = (props) => {
         </div>
       </div>
 
-      <a href="/">
-        <i id="blog-caret" className="fa fa-angle-down"></i>
-      </a>
+      <GoBackHome/>
 
     </div>
   )

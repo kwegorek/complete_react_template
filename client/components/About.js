@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link, withRouter} from 'react-router-dom'
 
 export const About = props => {
   return (
@@ -30,9 +31,11 @@ export const About = props => {
           environment where others can flourish and collaborate positively to
           achieve their goals.{' '}
         </p>
-        <a href="#projects-href">
-          <i className="fa fa-angle-down"></i>
-        </a>
+        <div className='about-backto-homepage'>
+        <Link style={{ textDecoration: 'none', color: 'black'}} to='/'>GO BACK TO <br/> HOMEPAGE</Link>
+
+        </div>
+       
       </div>
     </React.Fragment>
   )

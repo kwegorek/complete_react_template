@@ -1,11 +1,15 @@
 // apiRoutes/blogposts.js
 const router = require('express').Router()
-const {User, BlogPost} = require('../db/index')
+const {User, BlogPost, PLTranslate, ENTranslate,DETranslate} = require('../db/index')
 
 router.get('/', async function(req, res, next) {
   try {
     const blogPosts = await BlogPost.findAll()
-    res.json(blogPosts)
+    const pl = await PLTranslate.findAll()
+    const de = await DETranslate.findAll()
+    const en = await ENTranslate.findAll()
+
+    res.json( en)
   } catch (error) {
     next(error)
   }
@@ -13,6 +17,7 @@ router.get('/', async function(req, res, next) {
 // matches POST requests to /api/blogposts/
 router.post('/', async function(req, res, next) {
     try {
+      console.log(req.body, 'req.body')
         const newPost = await BlogPost.create(req.body)
         res.json(newPost)
       } catch (err) {
