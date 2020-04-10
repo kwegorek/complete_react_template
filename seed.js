@@ -1,6 +1,6 @@
 const {db} = require('./db/index')
-const {User, BlogPost} = require('./db/index')
-const {users, blogposts} = require('./dummyData')
+const {User, BlogPost, ENTranslate, PLTranslate, DETranslate} = require('./db/index')
+const {users, blogposts, pl, en, de} = require('./dummyData')
 
 async function seed() {
   await db.sync({force: true})
@@ -11,6 +11,15 @@ async function seed() {
 
   const blogpostsSeed = await Promise.all(blogposts.map(blogpost => BlogPost.create(blogpost)))
   console.log(`seeded ${blogpostsSeed.length} posts`)
+
+  const pltranslationSeed = await Promise.all(pl.map(translation => PLTranslate.create(translation)))
+  console.log(`seeded ${pltranslationSeed.length} pltranslationSeed`)
+
+  const entranslationSeed = await Promise.all(en.map(translation => ENTranslate.create(translation)))
+  console.log(`seeded ${entranslationSeed.length} entranslationSeed`)
+
+  const detranslationSeed = await Promise.all(de.map(translation => DETranslate.create(translation)))
+  console.log(`seeded ${detranslationSeed.length} detranslationSeed`)
 }
 
 async function runSeed() {

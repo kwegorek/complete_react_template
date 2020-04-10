@@ -5,11 +5,9 @@ const {User, BlogPost, PLTranslate, ENTranslate,DETranslate} = require('../db/in
 router.get('/', async function(req, res, next) {
   try {
     const blogPosts = await BlogPost.findAll()
-    const pl = await PLTranslate.findAll()
-    const de = await DETranslate.findAll()
-    const en = await ENTranslate.findAll()
 
-    res.json( en)
+
+    res.json(blogPosts )
   } catch (error) {
     next(error)
   }

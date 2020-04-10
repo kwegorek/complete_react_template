@@ -29,7 +29,7 @@ export default class ContactForm extends React.Component {
                 name="username"
                 placeholder="Name"
               />
-            </div>
+            </div>w
             <div className="col-12  media-col">
               <input type="text" id="email" name="email" placeholder="Email" />
             </div>

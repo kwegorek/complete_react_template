@@ -41,7 +41,7 @@ export const getOnePost = post => ({
 // * THUNK CREATORS
 // */
 export const gotPosts = () => async dispatch => {
-    console.log( 'posts----------------------------')
+   
  try {
    const {data} = await axios.get('/api/blogposts'); 
   //  console.log(data, 'data')
@@ -54,7 +54,7 @@ export const gotPosts = () => async dispatch => {
 }
 
 export const addPostThunk = (post) => async dispatch => {
-  console.log( 'posts----------------------------')
+
 try {
  const {data} = await axios.post('/api/blogposts', post); 
  console.log(data, 'data')

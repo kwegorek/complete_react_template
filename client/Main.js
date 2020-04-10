@@ -1,6 +1,6 @@
 import React from 'react'
 import {Header} from './components/Header.js'
-import {About} from './components/About.js'
+import About from './components/About.js'
 import {Footer} from './components/Footer.js'
 import Blog from './components/Blog.js'
 import {Projects} from './components/Projects.js'

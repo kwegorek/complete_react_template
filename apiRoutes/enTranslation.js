@@ -11,6 +11,10 @@ router.get('/', async function(req, res, next) {
     next(error)
   }
 })
+
+
+module.exports = router
+
 // matches POST requests to /api/blogposts/
 // router.post('/', async function(req, res, next) {
 //     try {
@@ -44,4 +48,3 @@ router.get('/', async function(req, res, next) {
 //   }
 // })
 
-// module.exports = router

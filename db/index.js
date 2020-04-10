@@ -45,9 +45,24 @@ const PLTranslate = db.define('pl', {
     type: Sequelize.ARRAY(Sequelize.STRING),
     defaultValue: ['Contact'],
   },
-  textHome: {type: DataTypes.TEXT, defaultValue: 'Programista fullstack'},
-  about: {type: DataTypes.TEXT, defaultValue: 'Ukonczylam kurs programowania'},
-  backBtn: {type: DataTypes.TEXT, defaultValue: 'WROC DO STRONY GLOWNEJ'},
+  textHome: {
+    type: DataTypes.TEXT,
+    defaultValue: 'Programista Fullstacka z dosiwdczeniem w budowaniu MERN',
+  },
+  about: {type: DataTypes.TEXT, defaultValue: 'Ukończyłam kurs programowania'},
+  aboutStory: {
+    type: DataTypes.TEXT,
+    defaultValue:
+      'In my teenage years I fell in love with sailing. After a trip through a famous lake near my hometown I eagerly gained a skipper license thereafter. I sailed in Europe, both lakes and seas. My favourite excursion was a 7-day trip between Croatian islands where I spent each night on a different island. My next adventure will be to sail through the Caribbean and Thailand islands.',
+  },
+
+  aboutStoryFavouriteApp: {
+    type: DataTypes.TEXT,
+    defaultValue:
+      'Many companies offer online applications that are used by millions of people worldwide, and my favourite one is G Suite. G Suite advanced applications that provide business professionals as well as non-professionals with a complete cloud-computing solution. G Suite offers solutions that handle video conferencing, group messaging, file storage, file sharing and real-time collaboration for working with data, documents, and files.As a SE I am fascinated by the simplicity of the UI and comprehensive features offered by G Suite. From a user perspective I see the value in the integration of G Suite solutions. Having all applications for managing email , storage, documents and other tasks is making everyday life easier. As a user I do not need to spend time searching, updating or synchronising different applications. All functionalities are coming for free. If technology is meant to change our lives for better, I feel like there is not a better app to love.',
+  },
+
+  backBtn: {type: DataTypes.TEXT, defaultValue: 'Strona-główna'},
   projectsDesc: {
     type: Sequelize.ARRAY(Sequelize.TEXT),
     defaultValue: [
@@ -57,6 +72,12 @@ const PLTranslate = db.define('pl', {
     ],
   },
 
+  videCapstone: {
+    type: DataTypes.STRING,
+    defaultValue:
+      'https://www.youtube.com/watch?v=E8WMadYn2Fg&list=PLx0iOsdUOUmnTCO5wLzNNeaLbbZLlngp6&index=3&t=76s',
+  },
+
   projectsTitle: {
     type: Sequelize.ARRAY(Sequelize.STRING),
     defaultValue: ['Traffic Tracker', 'Sklep internetowy', 'Gra Exit VR'],
@@ -64,44 +85,39 @@ const PLTranslate = db.define('pl', {
 
   project: {
     type: Sequelize.STRING,
-    defaultValue: 'Projekty'
+    defaultValue: 'Projekty',
   },
-
 
   contact: {
     type: Sequelize.STRING,
-    defaultValue: 'Kontakt'
+    defaultValue: 'Kontakt',
   },
 
   contactText: {
     type: Sequelize.STRING,
-    defaultValue: 'Masz pytania. Napisz'
+    defaultValue: 'Masz pytania. Napisz',
   },
 
   send: {
     type: Sequelize.STRING,
-    defaultValue: 'Wyslij'
+    defaultValue: 'Wyslij',
   },
 
   name: {
     type: Sequelize.STRING,
-    defaultValue: 'Imie'
+    defaultValue: 'Imie',
   },
 
   email: {
     type: Sequelize.STRING,
-    defaultValue: 'Email'
+    defaultValue: 'Email',
   },
 
   message: {
     type: Sequelize.STRING,
-    defaultValue: 'Wiadomosc'
+    defaultValue: 'Wiadomosc',
   },
-
-
-
 })
-
 
 const ENTranslate = db.define('en', {
   navaBar: {
@@ -116,16 +132,40 @@ const ENTranslate = db.define('en', {
     type: Sequelize.ARRAY(Sequelize.STRING),
     defaultValue: ['Contact'],
   },
-  textHome: {type: DataTypes.TEXT, defaultValue: 'Programista fullstack'},
-  about: {type: DataTypes.TEXT, defaultValue: 'Ukonczylam kurs programowania'},
-  backBtn: {type: DataTypes.TEXT, defaultValue: 'WROC DO STRONY GLOWNEJ'},
+  textHome: {
+    type: DataTypes.TEXT,
+    defaultValue:
+      'Full stack web developer with experience in building application with JavaScript tech stack.',
+  },
+  about: {
+    type: DataTypes.TEXT,
+    defaultValue:
+      'Former law specialist with education and practice obtained in Europe. Transitioned to professional software engineering after starting it as a hobby. Fascinated by technology consistently making learning easier, enjoys exploring new techniques in software development and imparting the experience to others',
+  },
+  aboutStory: {
+    type: DataTypes.TEXT,
+    defaultValue:
+      'In my teenage years I fell in love with sailing. After a trip through a famous lake near my hometown I eagerly gained a skipper license thereafter. I sailed in Europe, both lakes and seas. My favourite excursion was a 7-day trip between Croatian islands where I spent each night on a different island. My next adventure will be to sail through the Caribbean and Thailand islands.',
+  },
+  aboutStoryFavouriteApp: {
+    type: DataTypes.TEXT,
+    defaultValue:
+      'Many companies offer online applications that are used by millions of people worldwide, and my favourite one is G Suite. G Suite advanced applications that provide business professionals as well as non-professionals with a complete cloud-computing solution. G Suite offers solutions that handle video conferencing, group messaging, file storage, file sharing and real-time collaboration for working with data, documents, and files.As a SE I am fascinated by the simplicity of the UI and comprehensive features offered by G Suite. From a user perspective I see the value in the integration of G Suite solutions. Having all applications for managing email , storage, documents and other tasks is making everyday life easier. As a user I do not need to spend time searching, updating or synchronising different applications. All functionalities are coming for free. If technology is meant to change our lives for better, I feel like there is not a better app to love.',
+  },
+
+  backBtn: {type: DataTypes.TEXT, defaultValue: 'GO BACK TO HOMEPAGE'},
   projectsDesc: {
     type: Sequelize.ARRAY(Sequelize.TEXT),
     defaultValue: [
-      'tt Aplikacja pozwala sledzic',
-      'Sklep internetowu',
-      'Gra VR',
+      'Application tracking the traffic between given points. TrafficTracer visualizes traffic patterns and will help you reduce your commute time. Gathers the real-time traffic data between given points and presents how it changes over time.',
+      'Online shopping site where users can ourchase cereals. Implemented shopping cart full functionality.',
+      'Virtual Reality Escape Room, built with React360.',
     ],
+  },
+  videCapstone: {
+    type: DataTypes.STRING,
+    defaultValue:
+      'https://www.youtube.com/watch?v=E8WMadYn2Fg&list=PLx0iOsdUOUmnTCO5wLzNNeaLbbZLlngp6&index=3&t=76s',
   },
 
   projectsTitle: {
@@ -135,44 +175,39 @@ const ENTranslate = db.define('en', {
 
   project: {
     type: Sequelize.STRING,
-    defaultValue: 'Projekty'
+    defaultValue: 'Projekty',
   },
-
 
   contact: {
     type: Sequelize.STRING,
-    defaultValue: 'Kontakt'
+    defaultValue: 'Kontakt',
   },
 
   contactText: {
     type: Sequelize.STRING,
-    defaultValue: 'Masz pytania. Napisz'
+    defaultValue: 'Masz pytania. Napisz',
   },
 
   send: {
     type: Sequelize.STRING,
-    defaultValue: 'Wyslij'
+    defaultValue: 'Wyslij',
   },
 
   name: {
     type: Sequelize.STRING,
-    defaultValue: 'Imie'
+    defaultValue: 'Imie',
   },
 
   email: {
     type: Sequelize.STRING,
-    defaultValue: 'Email'
+    defaultValue: 'Email',
   },
 
   message: {
     type: Sequelize.STRING,
-    defaultValue: 'Wiadomosc'
+    defaultValue: 'Wiadomosc',
   },
-
-
-
 })
-
 
 const DETranslate = db.define('de', {
   navaBar: {
@@ -184,11 +219,22 @@ const DETranslate = db.define('de', {
     defaultValue: ['Linkedin', 'Medium', 'GitHub'],
   },
   btnContact: {
-    type: Sequelize.ARRAY(Sequelize.STRING),
-    defaultValue: ['Contact'],
+    type: Sequelize.STRING,
+    defaultValue: 'Contact',
   },
   textHome: {type: DataTypes.TEXT, defaultValue: 'Programista fullstack'},
   about: {type: DataTypes.TEXT, defaultValue: 'Ukonczylam kurs programowania'},
+
+  aboutStory: {
+    type: DataTypes.TEXT,
+    defaultValue:
+      'In my teenage years I fell in love with sailing. After a trip through a famous lake near my hometown I eagerly gained a skipper license thereafter. I sailed in Europe, both lakes and seas. My favourite excursion was a 7-day trip between Croatian islands where I spent each night on a different island. My next adventure will be to sail through the Caribbean and Thailand islands.',
+  },
+  aboutStoryFavouriteApp: {
+    type: DataTypes.TEXT,
+    defaultValue:
+      'Many companies offer online applications that are used by millions of people worldwide, and my favourite one is G Suite. G Suite advanced applications that provide business professionals as well as non-professionals with a complete cloud-computing solution. G Suite offers solutions that handle video conferencing, group messaging, file storage, file sharing and real-time collaboration for working with data, documents, and files.As a SE I am fascinated by the simplicity of the UI and comprehensive features offered by G Suite. From a user perspective I see the value in the integration of G Suite solutions. Having all applications for managing email , storage, documents and other tasks is making everyday life easier. As a user I do not need to spend time searching, updating or synchronising different applications. All functionalities are coming for free. If technology is meant to change our lives for better, I feel like there is not a better app to love.',
+  },
   backBtn: {type: DataTypes.TEXT, defaultValue: 'WROC DO STRONY GLOWNEJ'},
   projectsDesc: {
     type: Sequelize.ARRAY(Sequelize.TEXT),
@@ -198,6 +244,11 @@ const DETranslate = db.define('de', {
       'Gra VR',
     ],
   },
+  videCapstone: {
+    type: DataTypes.STRING,
+    defaultValue:
+      'https://www.youtube.com/watch?v=E8WMadYn2Fg&list=PLx0iOsdUOUmnTCO5wLzNNeaLbbZLlngp6&index=3&t=76s',
+  },
 
   projectsTitle: {
     type: Sequelize.ARRAY(Sequelize.STRING),
@@ -206,42 +257,38 @@ const DETranslate = db.define('de', {
 
   project: {
     type: Sequelize.STRING,
-    defaultValue: 'Projekty'
+    defaultValue: 'Projekty',
   },
-
 
   contact: {
     type: Sequelize.STRING,
-    defaultValue: 'Kontakt'
+    defaultValue: 'Kontakt',
   },
 
   contactText: {
     type: Sequelize.STRING,
-    defaultValue: 'Masz pytania. Napisz'
+    defaultValue: 'Masz pytania. Napisz',
   },
 
   send: {
     type: Sequelize.STRING,
-    defaultValue: 'Wyslij'
+    defaultValue: 'Wyslij',
   },
 
   name: {
     type: Sequelize.STRING,
-    defaultValue: 'Imie'
+    defaultValue: 'Imie',
   },
 
   email: {
     type: Sequelize.STRING,
-    defaultValue: 'Email'
+    defaultValue: 'Email',
   },
 
   message: {
     type: Sequelize.STRING,
-    defaultValue: 'Wiadomosc'
+    defaultValue: 'Wiadomosc',
   },
-
-
-
 })
 
-module.exports = {db, User, BlogPost, DETranslate, ENTranslate,PLTranslate }
+module.exports = {db, User, BlogPost, DETranslate, ENTranslate, PLTranslate}

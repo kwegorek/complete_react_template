@@ -1,9 +1,16 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 
 import {Post} from './Post'
 import {connect} from 'react-redux'
 import {gotPosts, getOnePostThunk} from '../../store/blogReducer'
+import {changePLBtn, changeENBtn, changeDEBtn} from '../../store/btnReducer'
+import {
+  gotPLTranslation,
+  gotENTranslation,
+  gotDETranslation,
+} from '../../store/languageReducer'
 import {Link, withRouter} from 'react-router-dom'
 
 class Navbar extends React.Component {
@@ -11,61 +18,230 @@ class Navbar extends React.Component {
     super(props)
 
     this.state = {}
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClickPL = this.handleClickPL.bind(this)
+    this.handleClickEN = this.handleClickEN.bind(this)
+    this.handleClickDE = this.handleClickDE.bind(this)
   }
 
-  componentDidMount(){
+  handleClickPL() {
+    // console.log(this.state)
 
+    this.props.changePLBtn(true)
+    this.props.changeENBtn(false)
+    this.props.changeDEBtn(false)
+  }
+
+  handleClickEN() {
+    this.props.changePLBtn(false)
+    this.props.changeENBtn(true)
+    this.props.changeDEBtn(false)
+  }
+
+  handleClickDE() {
+    this.props.changePLBtn(false)
+    this.props.changeENBtn(false)
+    this.props.changeDEBtn(true)
+  }
+
+  componentDidMount() {
     this.props.gotPosts()
+    this.props.gotPLTranslation()
+    this.props.gotENTranslation()
+    this.props.gotDETranslation()
 
+    //set default lan
+
+    this.props.changePLBtn(false)
+    this.props.changeENBtn(true)
+    this.props.changeDEBtn(false)
   }
 
   render() {
-    let post = true
+    let currentPlState = this.props.btnPL
+    let currentEnState = this.props.btnEN
+    let currentDeState = this.props.btnDE
+
+    let pltranslation = this.props.plTranslation
+    let entranslation = this.props.enTranslation
+    let detranslation = this.props.deTranslation
+
+    console.log(
+      currentPlState,
+      currentEnState,
+      currentDeState,
+      'currentDeState'
+    )
+
+    function returnLanguageVersion(currentPlState, currentDeState) {
+      if (currentPlState === true) {
+        return pltranslation
+      } else if (currentDeState === true) {
+        return detranslation
+      } else {
+        return entranslation
+      }
+    }
+
+    let translation = returnLanguageVersion(
+      currentPlState,
+      currentEnState,
+      currentDeState
+    )
+
+    let translationVersion = translation
+
     return (
-      <React.Fragment>
-
-     
-      {post ? (
       <div>
-      <header>
-        <nav>
-   
-            <ul className='nav-container'>
+      
+        {translationVersion 
+          ? translationVersion.map((section, indx) => {
+              return (
 
-            
-          <NavLink style={{ textDecoration: 'none', color: 'black' }} className='nav-item navbar-home'to='/home' activeStyle={{backgrounud:'orange'}}>HOME</NavLink>
 
     
-            <NavLink style={{ textDecoration: 'none', color: 'black' }} className='nav-item'to='/about' activeStyle={{backgrounud:'orange'}}>About</NavLink>
-            <NavLink style={{ textDecoration: 'none', color: 'black' }} className='nav-item'to='/projects' activeStyle={{backgrounud:'orange'}}>Projects</NavLink>
-            <NavLink style={{ textDecoration: 'none',color: 'black'}} className='nav-item'to='/contact' activeStyle={{backgrounud:'orange'}}>Contact</NavLink>
-            <NavLink  style={{ textDecoration: 'none', color: 'black' }}className='nav-item'to='/blog' activeStyle={{backgrounud:'orange'}}>Blog</NavLink>
+                <div key={indx}>
+            <header>
+              <nav>
+                <ul className="nav-container">
+                 <NavLink
+                    style={{textDecoration: 'none', color: 'black'}}
+                    className="nav-item navbar-home"
+                    to="/home"
+                    activeStyle={{backgrounud: 'orange'}}
+                  >
+                    {section.navaBar[0]}
+                  </NavLink>
+                  <a
+                    href="#"
+                    style={{
+                      textDecoration: 'none',
+                      color: 'black',
+                      paddingRight: '0px',
+                      paddingLeft: '0px',
+                    }}
+                    className="nav-item navbar-home"
+                    onClick={this.handleClickPL}
+                  >
+                    {' '}
+                    PL
+                  </a>
+                  <a
+                    href="#"
+                    style={{
+                      textDecoration: 'none',
+                      color: 'black',
+                      paddingRight: '0px',
+                      paddingLeft: '0px',
+                    }}
+                    className="nav-item navbar-home"
+                    onClick={this.handleClickEN}
+                  >
+                    {' '}
+                    EN
+                  </a>
+                  <a
+                    href="#"
+                    style={{
+                      textDecoration: 'none',
+                      color: 'black',
+                      paddingRight: '0px',
+                      paddingLeft: '0px',
+                    }}
+                    className="nav-item navbar-home"
+                    onClick={this.handleClickDE}
+                  >
+                    {' '}
+                    DE
+                  </a>
 
-            </ul>
-           
-        </nav>
-      </header>
-    </div>) : null}
-    </React.Fragment>
-      
+                  <NavLink
+                    style={{textDecoration: 'none', color: 'black'}}
+                    className="nav-item"
+                    to="/about"
+                    activeStyle={{backgrounud: 'orange'}}
+                  >
+                    {section.navaBar[1]}
+                  </NavLink>
+                  <NavLink
+                    style={{textDecoration: 'none', color: 'black'}}
+                    className="nav-item"
+                    to="/projects"
+                    activeStyle={{backgrounud: 'orange'}}
+                  >
+                  { section.navaBar[2]}
+                  </NavLink>
+                  <NavLink
+                    style={{textDecoration: 'none', color: 'black'}}
+                    className="nav-item"
+                    to="/contact"
+                    activeStyle={{backgrounud: 'orange'}}
+                  >
+                      { section.navaBar[3]}
+                  </NavLink>
+                  <NavLink
+                    style={{textDecoration: 'none', color: 'black'}}
+                    className="nav-item"
+                    to="/blog"
+                    activeStyle={{backgrounud: 'orange'}}
+                  >
+                      { section.navaBar[4]}
+                  </NavLink>
+                </ul>
+              </nav>
+            </header>
+          </div>
+
+
+
+                
+
         
+
+
+
+
+
+
+
+
+
+
+
+
+              )
+            })
+          : null}
+
+
+
+      </div>
     )
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    blogReducer: state.blogReducer.blogposts
+    blogReducer: state.blogReducer.blogposts,
+    plTranslation: state.languageReducer.translationPL,
+    enTranslation: state.languageReducer.translationEN,
+    deTranslation: state.languageReducer.translationDE,
+    btnPL: state.btnReducer.btnPL,
+    btnEN: state.btnReducer.btnEN,
+    btnDE: state.btnReducer.btnDE,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    gotPosts: () => dispatch(gotPosts())
+    gotPosts: () => dispatch(gotPosts()),
+    gotPLTranslation: () => dispatch(gotPLTranslation()),
+    gotENTranslation: () => dispatch(gotENTranslation()),
+    gotDETranslation: () => dispatch(gotDETranslation()),
+    changePLBtn: (btnState) => dispatch(changePLBtn(btnState)),
+    changeENBtn: (btnState) => dispatch(changeENBtn(btnState)),
+    changeDEBtn: (btnState) => dispatch(changeDEBtn(btnState)),
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
-
-
-
-

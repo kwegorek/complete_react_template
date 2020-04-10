@@ -7,7 +7,7 @@ const GET_DE_TRANSLATION = 'GET_DE_TRANSLATION'
 /**
  * INITIAL STATE
  */
-const initialState = {pltranslation: [], detranslation: [], entranslation: []}
+const initialState = {translationPL: [], translationEN: [], translationDE: []}
 
 /**
  * ACTION CREATORS
@@ -31,7 +31,8 @@ export const getDETranslation = (translation) => ({
 // */
 export const gotPLTranslation = () => async (dispatch) => {
   try {
-    const {data} = await axios.get('/api/pltranslation')
+    const {data} = await axios.get('/api/pltranslation');
+    // console.log(data, 'data')
 
     dispatch(getPLTranslation(data))
 
@@ -54,7 +55,7 @@ export const gotENTranslation = () => async (dispatch) => {
 }
 
 export const gotDETranslation = () => async (dispatch) => {
-  console.log('posts----------------------------')
+
   try {
     const {data} = await axios.get('/api/detranslation')
     //  console.log(data, 'data')
@@ -75,10 +76,10 @@ export default function languageReducer(state = initialState, action) {
       return {...state, translationPL: action.translation}
 
     case GET_EN_TRANSLATION:
-      return {...state, translationPL: action.translation}
+      return {...state, translationEN: action.translation}
 
     case GET_DE_TRANSLATION:
-      return {...state, translationPL: action.translation}
+      return {...state, translationDE: action.translation}
 
     default:
       return state
