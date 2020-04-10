@@ -13,15 +13,6 @@ export const Main = () => {
   return (
          <div>
             <Header/>
-            {/* <Projects/>
-            <ContactForm/> */}
-        
-            {/* <Blog/> */}
-            {/* <Services/> */}
-            {/* <About/> */}
-            {/* <Projects/>
-            // <Blog/>
-            <ContactForm/> */}
          </div>
   )
 }

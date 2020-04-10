@@ -170,32 +170,32 @@ const ENTranslate = db.define('en', {
 
   projectsTitle: {
     type: Sequelize.ARRAY(Sequelize.STRING),
-    defaultValue: ['Traffic Tracker', 'Sklep internetowy', 'Gra Exit VR'],
+    defaultValue: ['Traffic Tracker', 'GraceShopper', 'VR Escape Room'],
   },
 
   project: {
     type: Sequelize.STRING,
-    defaultValue: 'Projekty',
+    defaultValue: 'Projects',
   },
 
   contact: {
     type: Sequelize.STRING,
-    defaultValue: 'Kontakt',
+    defaultValue: 'Contact',
   },
 
   contactText: {
     type: Sequelize.STRING,
-    defaultValue: 'Masz pytania. Napisz',
+    defaultValue: 'Do you have any questions or comments? Please, share!',
   },
 
   send: {
     type: Sequelize.STRING,
-    defaultValue: 'Wyslij',
+    defaultValue: 'Send',
   },
 
   name: {
     type: Sequelize.STRING,
-    defaultValue: 'Imie',
+    defaultValue: 'Name',
   },
 
   email: {
@@ -205,8 +205,54 @@ const ENTranslate = db.define('en', {
 
   message: {
     type: Sequelize.STRING,
-    defaultValue: 'Wiadomosc',
+    defaultValue: 'Text',
   },
+
+  postPost: {
+    type: Sequelize.STRING,
+    defaultValue: 'Add Post',
+  },
+
+  getPreview: {
+    type: Sequelize.STRING,
+    defaultValue: 'Show Preview',
+  },
+
+  post: {
+    type: Sequelize.STRING,
+    defaultValue: 'Post',
+  },
+
+  searchByTag: {
+    type: Sequelize.STRING,
+    defaultValue: 'Search by tag eg. javascript',
+  },
+
+  addTag: {
+    type: Sequelize.STRING,
+    defaultValue: 'Add tag',
+  },
+
+  addComment: {
+    type: Sequelize.STRING,
+    defaultValue: 'Add Comment',
+  },
+  skilles:{type: Sequelize.ARRAY(Sequelize.STRING),
+  defaultValue: [
+    'JavaScript',
+    'HTML/CSS',
+    'React',
+    'Redux',
+    'Express',
+    'Sequelize',
+    'SQL',
+    'PostgreSQL',
+    'Git, GitHub',
+    'BASH',
+    'Knowledgeable:', 
+    'Python']}
+
+
 })
 
 const DETranslate = db.define('de', {
@@ -222,7 +268,7 @@ const DETranslate = db.define('de', {
     type: Sequelize.STRING,
     defaultValue: 'Contact',
   },
-  textHome: {type: DataTypes.TEXT, defaultValue: 'Programista fullstack'},
+  textHome: {type: DataTypes.TEXT, defaultValue: 'Ich bin ein Freelance Web Entwickler aus NYC, mit Erfahrung in Frontend und Backend Programmierung.'},
   about: {type: DataTypes.TEXT, defaultValue: 'Ukonczylam kurs programowania'},
 
   aboutStory: {

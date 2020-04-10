@@ -3,7 +3,7 @@ import {Post} from './Post'
 import {connect} from 'react-redux'
 import {addPostThunk, addPreviewPost, addPreviewPostThunk} from '../../store/blogReducer'
 import {Link, withRouter} from 'react-router-dom'
-import { GoBackHome } from './GoBackHome'
+import GoBackHome from './GoBackHome'
 
 
 class PreviewPost extends React.Component {

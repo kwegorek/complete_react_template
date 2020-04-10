@@ -10,11 +10,12 @@ import PostLarge from './components/PostLarge'
 import Navbar from './components/Navbar'
 import {Footer} from './components/Footer'
 import About from './components/About'
-import {Projects} from './components/Projects'
+import Projects from './components/Projects'
 import Blog from './components/Blog'
 import ContactForm from './components/ContactForm'
 import AddBlogPost from './components/AddBlogPost'
 import PreviewPost from './components/PreviewPost'
+import Header from './components/Header'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -23,8 +24,8 @@ ReactDOM.render(
         <Navbar/>
         <Switch>
         {/* Routes placed here are available to all visitors */}
-        <Route exact path="/" component={Main} />
-        <Route exact path="/home" component={Main} />
+        <Route exact path="/" component={Header} />
+        <Route exact path="/home" component={Header} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/blog/addpost" component={AddBlogPost} />
         <Route exact path="/contact" component={ContactForm} />

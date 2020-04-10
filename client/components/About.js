@@ -8,7 +8,7 @@ import {
   gotDETranslation,
 } from '../../store/languageReducer'
 
-import {GoBackHome} from './GoBackHome'
+import GoBackHome from './GoBackHome'
 
 const About = ({
   plTranslation,
@@ -18,7 +18,6 @@ const About = ({
   btnEN,
   btnDE,
 }) => {
-  
   function returnLanguageVersion(currentPlState, currentDeState) {
     if (currentPlState === true) {
       return plTranslation
@@ -29,58 +28,135 @@ const About = ({
     }
   }
 
-  let translationVersion = returnLanguageVersion(
-    btnPL,
-    btnEN,
-    btnDE
-  )
+  let translationVersion = returnLanguageVersion(btnPL, btnEN, btnDE)
 
   return (
-    <div>
-           
-      {translationVersion
-        ? translationVersion.map((section, indx) => {
-            return (
-              <div key={indx}>
+
+    <div id="projects-href" className="content-about-container">
+    {translationVersion
+      ? translationVersion.map((section, indx) => {
+          return (
+            // eslint-disable-next-line react/jsx-key
+                         <div key={indx}>
                 <div id="about" className="content-about-container">
-                  <h1>{section.navaBar[1]}</h1>
-                  <p id="main-about">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                  </p>
-                  <p>
-                    In my teenage years I fell in love with sailing. After a
-                    trip through a famous lake near my hometown I eagerly gained
-                    a skipper license thereafter. I sailed in Europe, both lakes
-                    and seas. My favorite excursion was a 7-day trip between
-                    Croatian islands where I spent each night on a different
-                    island. My next adventure will be to sail through the
-                    Caribbean and Thailand islands
-                  </p>
-                  <p>
-                    I am proud of myself for juggling the hectic and rewarding
-                    benefits of being a mom to my 2 year old baby, in addition
-                    to simultaneously attending and graduating the Grace Hopper
-                    Program. After graduating The Grace Hopper Program I feel
-                    empowered and inspired to create an environment where others
-                    can flourish and collaborate positively to achieve their
-                    goals.{' '}
-                  </p>
+
+                  
+               
+                  <div>
+                    <h1>{section.navaBar[1]}</h1>
+                    <p id="main-about">{section.about}</p>
+                  </div>
+
+
+                  <div className='about-story'>
+                    <p>{section.aboutStory}</p>
+                    {/* <img id='pic-boat'src={'./img/boatYacht.jpg'}></img> */}
+                  </div>
+
+
+              
+                  {/* <div>
+                    <h1>FAVOURITE SOFTWARE</h1>
+                    <p>{section.aboutStoryFavouriteApp}</p>
+                  </div> */}
+
+                  <div>
+                  <h1 id='skills-title'>SKILLS</h1>
+            
+                    <p className='skills-container'>
+                    JavaScript, HTML/CSS, React, Redux, Express, Sequelize, SQL, PostgreSQL, Git, GitHub, BASH
+                    </p>
+                 
+                  </div>
+                  <div className='icons'>
+                  <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/javascript.png"/></a>
+                  <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/react-native.png"/></a>
+                
+               
+                
+                  <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/html.png"/></a>
+                
+                  <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/css3.png"/></a>
+                
+
+                  <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/postgreesql.png"/></a>
+                
+                    </div>
+
+                    
                   <div className="about-backto-homepage">
                     <GoBackHome />
                   </div>
                 </div>
               </div>
-            )
-          })
-        : null}
-    </div>
+          )
+        })
+      : null}
+  </div>
+    // <React.Fragment>
+
+    //          
+    //   {translationVersion
+    //     ? translationVersion.map((section, indx) => {
+    //         return (
+              
+      
+    //           <div key={indx}>
+    //             <div id="about" className="content-about-container">
+
+                  
+               
+    //               <div>
+    //                 <h1>{section.navaBar[1]}</h1>
+    //                 <p id="main-about">{section.about}</p>
+    //               </div>
+
+
+    //               <div className='about-story'>
+    //                 <p>{section.aboutStory}</p>
+    //                 {/* <img id='pic-boat'src={'./img/boatYacht.jpg'}></img> */}
+    //               </div>
+
+
+              
+    //               {/* <div>
+    //                 <h1>FAVOURITE SOFTWARE</h1>
+    //                 <p>{section.aboutStoryFavouriteApp}</p>
+    //               </div> */}
+
+    //               <div>
+    //               <h1 id='skills-title'>SKILLS</h1>
+            
+    //                 <p className='skills-container'>
+    //                 JavaScript, HTML/CSS, React, Redux, Express, Sequelize, SQL, PostgreSQL, Git, GitHub, BASH
+    //                 </p>
+                 
+    //               </div>
+    //               <div className='icons'>
+    //               <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/javascript.png"/></a>
+    //               <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/react-native.png"/></a>
+                
+               
+                
+    //               <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/html.png"/></a>
+                
+    //               <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/css3.png"/></a>
+                
+
+    //               <a href="https://icons8.com/icon/39853/javascript"><img src="https://img.icons8.com/ios/50/000000/postgreesql.png"/></a>
+                
+    //                 </div>
+
+                    
+    //               <div className="about-backto-homepage">
+    //                 <GoBackHome />
+    //               </div>
+    //             </div>
+    //           </div>
+    //         )
+    //       })
+    //     : null}
+    //    </React.Fragment>
   )
 }
 

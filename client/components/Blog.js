@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {gotPosts} from '../../store/blogReducer'
 import {Link, withRouter} from 'react-router-dom'
 import AddBlogPost from './AddBlogPost'
-import {GoBackHome} from './GoBackHome'
+import GoBackHome from './GoBackHome'
 
 class Blog extends React.Component {
   constructor(props) {
@@ -94,14 +94,15 @@ class Blog extends React.Component {
                         </Link>
                         <span>Add Post</span>
                       </div>
-                      <div>
-                        <h3>Serch by tag</h3>{' '}
-                        <input
+                      <div id='blog-search'>
+                        <h3>{section.searchByTag}</h3>{' '}
+                        <input  
                           type="text"
                           name="search"
                           value={this.state.search}
                           onChange={this.handleChange}
-                          placeholder="search by tag: eg. javascript"
+                          placeholder={section.searchByTag}
+                        
                         ></input>
                       </div>
                       <div></div>
