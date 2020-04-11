@@ -59,10 +59,11 @@ return (
 
 
 <React.Fragment key={indx}>
+<div id='banner-blog-main'></div>
         <div id="contact" className="contact-grid-container container-uni">
           <div className="row">
             <div className="col-12">
-              <h2>CONTACT ME</h2>
+              <h1>CONTACT ME</h1>
             </div>
           </div>
           <div id="contact-wrapper" className="row">

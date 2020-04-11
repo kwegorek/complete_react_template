@@ -33,6 +33,7 @@ export const Projects = ({
 
   return (
     <div id="projects-href" className="content-project-container">
+           <div id='banner-blog-main'></div>
       {translationVersion
         ? translationVersion.map((section, indx) => {
             return (
@@ -50,7 +51,7 @@ export const Projects = ({
                     </div>
 
                     <div className="col-4 project-item">
-                      <img src="./img/shop.png" />
+                      <a href=''><img src="./img/shop.png" /></a>
                       <h1>{section.projectsTitle[1]}</h1>
                       <p>{section.projectsDesc[1]}</p>
                     </div>

@@ -158,8 +158,8 @@ const ENTranslate = db.define('en', {
     type: Sequelize.ARRAY(Sequelize.TEXT),
     defaultValue: [
       'Application tracking the traffic between given points. TrafficTracer visualizes traffic patterns and will help you reduce your commute time. Gathers the real-time traffic data between given points and presents how it changes over time.',
-      'Online shopping site where users can ourchase cereals. Implemented shopping cart full functionality.',
-      'Virtual Reality Escape Room, built with React360.',
+      'Online shopping site where users can ourchase cereals. Consumers are provided with a fully implemented shopping cart functionality. Project developed with React, JavaScript and relational database.',
+      'Virtual Reality Escape Room, built with React360. It is a VR Experience where a player needs to find clues to solve puzzles and find his way out of the Room.',
     ],
   },
   videCapstone: {

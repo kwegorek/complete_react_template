@@ -32,7 +32,9 @@ const About = ({
 
   return (
 
+
     <div id="projects-href" className="content-about-container">
+           <div id='banner-blog-main'></div>
     {translationVersion
       ? translationVersion.map((section, indx) => {
           return (

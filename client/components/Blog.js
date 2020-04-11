@@ -69,31 +69,20 @@ class Blog extends React.Component {
 
     return (
       <React.Fragment>
+         <div id='banner-blog-main'></div>
+       
         <div id="blog" className="content-blog-container container-uni">
           {translationVersion
             ? translationVersion.map((section, indx) => {
                 return (
+                  
                   <div key={indx}>
+                     
                     <div>
-                      <h1 id="blog-title">
+                      {/* <h1 id="blog-title">
                         <span>{section.navaBar[4]}</span>
-                      </h1>
-                      <div>
-                        <Link
-                          to="/blog/addpost"
-                          style={{
-                            textDecoration: 'none',
-                            color: 'black',
-                            padding: '5px',
-                          }}
-                        >
-                          <i
-                            className="fa fa-plus-circle"
-                            aria-hidden="true"
-                          ></i>
-                        </Link>
-                        <span>Add Post</span>
-                      </div>
+                      </h1> */}
+                      
                       <div id='blog-search'>
                         <h3>{section.searchByTag}</h3>{' '}
                         <input  
@@ -125,6 +114,22 @@ class Blog extends React.Component {
                 })
               : null}
           </div>
+          <div>
+                        <Link
+                          to="/blog/addpost"
+                          style={{
+                            textDecoration: 'none',
+                            color: 'black',
+                            padding: '5px',
+                          }}
+                        >
+                          <i
+                            className="fa fa-plus-circle"
+                            aria-hidden="true"
+                          ></i>
+                        </Link>
+                        <span>Add Post</span>
+                      </div>
           <div>
             <GoBackHome />
           </div>
