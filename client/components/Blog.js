@@ -84,14 +84,14 @@ class Blog extends React.Component {
                       </h1> */}
                       
                       <div id='blog-search'>
-                        <h3>{section.searchByTag}</h3>{' '}
-                        <input  
+                        <input  className='search-input'
                           type="text"
                           name="search"
                           value={this.state.search}
                           onChange={this.handleChange}
-                          placeholder={section.searchByTag}
-                        
+                          placeholder="&#xF002;"
+                          // placeholder={section.searchByTag}
+                          
                         ></input>
                       </div>
                       <div></div>

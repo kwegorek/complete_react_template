@@ -1,9 +1,9 @@
 const {db} = require('./db/index')
-const {User, BlogPost, ENTranslate, PLTranslate, DETranslate} = require('./db/index')
-const {users, blogposts, pl, en, de} = require('./dummyData')
+const {User, BlogPost, ENTranslate, PLTranslate, DETranslate, UserInteraction} = require('./db/index')
+const {users, blogposts, pl, en, de, interactions} = require('./dummyData')
 
 async function seed() {
-  await db.sync({force: true})
+  await db.sync({force:true})
   console.log('db synced!')
 
   const usersSeed = await Promise.all(users.map(user => User.create(user)))
@@ -20,6 +20,10 @@ async function seed() {
 
   const detranslationSeed = await Promise.all(de.map(translation => DETranslate.create(translation)))
   console.log(`seeded ${detranslationSeed.length} detranslationSeed`)
+
+
+  const userInteractionSeed = await Promise.all(de.map(userinteraction=> UserInteraction.create(userinteraction)))
+  console.log(`seeded ${userInteractionSeed.length} userinteractionSeed`)
 }
 
 async function runSeed() {

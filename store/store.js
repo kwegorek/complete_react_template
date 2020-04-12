@@ -5,10 +5,11 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import blogReducer from './blogReducer'
 import languageReducer from './languageReducer'
 import btnReducer from './btnReducer'
+import userInteractionReducer from './userInteractionReducer'
 
 
 
-const reducer = combineReducers({blogReducer, languageReducer, btnReducer})
+const reducer = combineReducers({blogReducer, languageReducer, btnReducer, userInteractionReducer})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )

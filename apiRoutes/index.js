@@ -6,6 +6,7 @@ router.use('/blogposts', require('./blogposts')) // matches all requests to  /ap
 router.use('/entranslation', require('./enTranslation'))
 router.use('/pltranslation', require('./plTranslation'))
 router.use('/detranslation', require('./deTranslation'))
+router.use('/userinteractions', require('./userinteraction'))
 // router.use('/pltranslation', require('./plTranslation'))
 
 router.use(function (req, res, next) {

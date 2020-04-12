@@ -11,23 +11,48 @@ import {
 export const Post = (props) => {
   let post = props.post
   let readMore = `/post/${post.id}`
+  console.log(post)
 
   return (
     <div id="blog-item-id" className="col-4 blog-item ">
-    <div className='banner-blog'></div>
+      <div className="banner-blog">
+        <img className="banner-blog-img" src={post.imageUrl}></img>
+      </div>
 
       <div className="blog-item-content">
-        <div className='title-edited-container'>
-        <h2 className='post-title'>{post.title}</h2>
-        <div className='post-love-comment-views-container'>
-          <div className='post-love-comment-views-item'><a>LOVE</a></div>
-          <div className='post-love-comment-views-item'><a>LOVE</a></div>
-          <div className='post-love-comment-views-item'><a>LOVE</a></div>
-        </div>
+        <div className="title-edited-container">
+          <div className="title-container">
+            <div className="title-container-item">
+              {' '}
+              <h2 className="post-title">
+                {post.title}
+                <span>
+                  <Link to={readMore} className="display-more">
+                    Read more
+                  </Link>
+                </span>
+              </h2>
+            </div>
+          </div>
 
+          <div className="post-love-comment-views-container">
+            <div>
+              <a>
+                <i className="fa fa-heart" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div>
+              <a>
+                <i className="fa fa-comments" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div>
+              <a>
+                <i className="fa fa-eye" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
         </div>
-       
-
       </div>
     </div>
   )

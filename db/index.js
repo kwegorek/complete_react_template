@@ -15,20 +15,44 @@ const User = db.define('user', {
   name: DataTypes.TEXT,
 })
 
+
+const UserInteraction = db.define('userinteraction', {
+  likes: {type: DataTypes.INTEGER, defaultValue: 1},
+})
+
 const BlogPost = db.define('blogpost', {
   title: {type: DataTypes.STRING},
   content: {type: DataTypes.TEXT},
+  contentPar2: {type: DataTypes.TEXT},
+  contentPar3: {type: DataTypes.TEXT},
+  contentPar4: {type: DataTypes.TEXT},
+  contentPar5: {type: DataTypes.TEXT},
+  contentPar6: {type: DataTypes.TEXT},
+  contentPar7: {type: DataTypes.TEXT},
+  contentPar8: {type: DataTypes.TEXT},
   edited: {
     type: Sequelize.DATEONLY,
     defaultValue: Sequelize.NOW,
   },
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: 'https://unsplash.com/photos/oI6zrBj3nKw',
+    defaultValue: './img/milky-way-2695569_640.jpg',
   },
   tag: {
     type: Sequelize.ARRAY(Sequelize.STRING),
     defaultValue: ['all'],
+  },
+  imageUrlAdditional1: {
+    type: Sequelize.STRING,
+  },
+  imageUrlAdditional2: {
+    type: Sequelize.STRING,
+  },
+  imageUrlAdditional3: {
+    type: Sequelize.STRING,
+  },
+  imageUrlAdditional4: {
+    type: Sequelize.STRING,
   },
 })
 
@@ -237,6 +261,16 @@ const ENTranslate = db.define('en', {
     type: Sequelize.STRING,
     defaultValue: 'Add Comment',
   },
+  iframe: {
+    type: Sequelize.STRING,
+    defaultValue: 'https://repl.it/@KwNy/jsblog',
+  },
+
+
+
+
+
+
   skilles:{type: Sequelize.ARRAY(Sequelize.STRING),
   defaultValue: [
     'JavaScript',
@@ -337,4 +371,4 @@ const DETranslate = db.define('de', {
   },
 })
 
-module.exports = {db, User, BlogPost, DETranslate, ENTranslate, PLTranslate}
+module.exports = {db, User, BlogPost, DETranslate, ENTranslate, PLTranslate,UserInteraction}

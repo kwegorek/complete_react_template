@@ -1,6 +1,7 @@
 import React from 'react'
 import {Post} from './Post'
 import {connect} from 'react-redux'
+import {gotInteractions, addLikeThunk} from '../../store/userInteractionReducer'
 import {gotPosts, getOnePostThunk} from '../../store/blogReducer'
 import {Link, withRouter} from 'react-router-dom'
 
@@ -8,61 +9,154 @@ class PostLarge extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = {}
+    this.state = {likesNum:0}
+
+    this.handleClickInteraction = this.handleClickInteraction.bind(this)
   }
 
-  componentDidMount(){
-
+  componentDidMount() {
     this.props.gotPosts()
+    this.props.gotInteractions()
+    let num = this.props.alllikes.map(function (el) {
+      return el.likes
+    })
+    this.setState({
+      likesNum:num
+    })
+  }
 
+  handleClickInteraction(e) {
+    let currentClicked = e.target.id
+    var ifCLickedHeart = localStorage.getItem(currentClicked)
+    localStorage.clear()
+
+    console.log(ifCLickedHeart, 'data')
+
+    if (currentClicked === 'heart') {
+      localStorage.setItem(currentClicked, 'heart')
+
+      //  console.log(this.props.likes, 'this.props.likes')
+      //   this.props.gotInteractions()
+      // let num = this.props.currentLikesNumber +1;
+
+      console.log(
+        this.props.alllikes,
+        '############this.props.currentLikesNumber'
+      )
+
+      let obj = {newLikesCount: this.state.likesNum}
+      console.log('obj', obj)
+      this.props.addLikeThunk(obj)
+    } else if (currentClicked === 'comments' && !ifCLickedHeart) {
+      localStorage.setItem(currentClicked, 'comments')
+    } else if (currentClicked === 'seen' && !ifCLickedHeart) {
+      localStorage.setItem(currentClicked, 'seen')
+    }
   }
 
   render() {
-
-    let id = this.props.match.params.id; 
-   let filtered = this.props.blogReducer.filter(function(el){if(el.id == Number(id)){return el}});
+    let id = this.props.match.params.id
+    let filtered = this.props.blogReducer.filter(function (el) {
+      if (el.id == Number(id)) {
+        return el
+      }
+    })
     let post = filtered[0]
+    // console.log(this.props.likes, 'this.props.likes')
+
+    // let heartsNum = this.props.likes.currentLikesState.likes
+  
+ 
+    let heartsNum = true
     return (
       <React.Fragment>
+        {post ? (
+          <div id="blog-item-large" className="col-12 blog-item ">
+            <div className="banner-blog large-img-conatiner">
+              <img
+                className="banner-blog-img-large"
+                src="../img/blog1.jpg"
+              ></img>
+            </div>
 
-     
-      {post ? (
-      <div id="blog-item-id" className="col-4 blog-item ">
-      <div>
-        <img className="blog-pic" src="./img/milky-way-2695569_640.jpg" />
-      </div>
+            <div className="blog-item-content">
+              <div className="title-edited-co ntainer">
+                <div id="title-container-large">{post.title}</div>
 
-      <div className="blog-item-content">
-        <div className='title-edited-container'>
-        <h2 className='post-title'>{post.title}</h2>
-        <h5 className='post-tag'>{post.tag}</h5>
-        <h5 >
-          Last edited: <span>{post.edited}</span>
-        </h5>
+                <div className="post-love-comment-views-container">
+                  <div>
+                    <a>
+                      <i
+                        id="heart"
+                        onClick={(e) => this.handleClickInteraction(e)}
+                        className="fa fa-heart"
+                        aria-hidden="true"
+                      ></i>
+              
+                      {this.props.alllikes
+                        ? this.props.alllikes.map((el, indx) => {
+                            return (
+                              <span key={indx}className="number-holder">{el.likes}</span>
+                            )
+                          })
+                        : null}
+                    </a>
+                  </div>
+                  <div>
+                    <a>
+                      <i
+                        id="comments"
+                        onClick={(e) => this.handleClickInteraction(e)}
+                        className="fa fa-comments"
+                        aria-hidden="true"
+                      ></i>
+                      <span className="number-holder"></span>
+                    </a>
+                  </div>
+                  <div>
+                    <a>
+                      <i
+                        id="seen"
+                        onClick={(e) => this.handleClickInteraction(e)}
+                        className="fa fa-eye"
+                        aria-hidden="true"
+                      ></i>
+                      <span className="number-holder"></span>
+                    </a>
+                  </div>
+                </div>
+                <div className="post-large-all-content">
+                  <div id="content-container-large">{post.content}</div>
+                  <div id="content-container-large">{post.contentPar2}</div>
+                  <div id="content-container-large">{post.contentPar3}</div>
+                  <div id="content-container-large">{post.contentPar4}</div>
+                  <div id="content-container-large">
+                    <img src={post.imageUrlAdditional1}></img>
+                  </div>
+                  <div id="content-container-large">{post.contentPar5}</div>
 
-        <div><p>{post.content}</p>
+                  {/* <iframe width="800" height="600" frameborder="0" scrolling="no"src={post.iframe}></iframe> */}
+                </div>
+              </div>
+            </div>
           </div>
-
-        </div>
-       
-
-      </div>
-    </div>) : null}
-    </React.Fragment>
-      
-        
+        ) : null}
+      </React.Fragment>
     )
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    blogReducer: state.blogReducer.blogposts
+    blogReducer: state.blogReducer.blogposts,
+    alllikes: state.userInteractionReducer.alllikes,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    gotPosts: () => dispatch(gotPosts())
+    gotPosts: () => dispatch(gotPosts()),
+    gotInteractions: () => dispatch(gotInteractions()),
+    addLikeThunk: (val) => dispatch(addLikeThunk(val)),
   }
 }
 
