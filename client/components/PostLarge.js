@@ -9,7 +9,7 @@ class PostLarge extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = {likesNum:0}
+    this.state = {likes: null}
 
     this.handleClickInteraction = this.handleClickInteraction.bind(this)
   }
@@ -17,17 +17,24 @@ class PostLarge extends React.Component {
   componentDidMount() {
     this.props.gotPosts()
     this.props.gotInteractions()
-    let num = this.props.alllikes.map(function (el) {
-      return el.likes
-    })
-    this.setState({
-      likesNum:num
-    })
+
   }
 
   handleClickInteraction(e) {
     let currentClicked = e.target.id
     var ifCLickedHeart = localStorage.getItem(currentClicked)
+    let num = this.props.alllikes
+      .map(function (el) {
+        return el.likes
+      })
+      .join('')
+
+    console.log(num, 'num-------r----------t')
+
+    // this.setState({
+    //   likesNum:Number(num)+1
+    // })
+
     localStorage.clear()
 
     console.log(ifCLickedHeart, 'data')
@@ -39,12 +46,7 @@ class PostLarge extends React.Component {
       //   this.props.gotInteractions()
       // let num = this.props.currentLikesNumber +1;
 
-      console.log(
-        this.props.alllikes,
-        '############this.props.currentLikesNumber'
-      )
-
-      let obj = {newLikesCount: this.state.likesNum}
+      let obj = {likes: Number(num) + 1}
       console.log('obj', obj)
       this.props.addLikeThunk(obj)
     } else if (currentClicked === 'comments' && !ifCLickedHeart) {
@@ -52,9 +54,26 @@ class PostLarge extends React.Component {
     } else if (currentClicked === 'seen' && !ifCLickedHeart) {
       localStorage.setItem(currentClicked, 'seen')
     }
+
+    let currentLikes = this.props.alllikes
+      .map(function (el) {
+        return el.likes
+      })
+      .join('')
+
+    this.setState({
+      likes: Number(currentLikes),
+    })
   }
 
   render() {
+
+    let likesAll = this.props.alllikes
+    .map(function (el) {
+      return el.likes
+    })
+    .join('')
+
     let id = this.props.match.params.id
     let filtered = this.props.blogReducer.filter(function (el) {
       if (el.id == Number(id)) {
@@ -65,8 +84,7 @@ class PostLarge extends React.Component {
     // console.log(this.props.likes, 'this.props.likes')
 
     // let heartsNum = this.props.likes.currentLikesState.likes
-  
- 
+
     let heartsNum = true
     return (
       <React.Fragment>
@@ -92,14 +110,8 @@ class PostLarge extends React.Component {
                         className="fa fa-heart"
                         aria-hidden="true"
                       ></i>
-              
-                      {this.props.alllikes
-                        ? this.props.alllikes.map((el, indx) => {
-                            return (
-                              <span key={indx}className="number-holder">{el.likes}</span>
-                            )
-                          })
-                        : null}
+
+                      <span className="number-holder">{Number(likesAll)}</span>
                     </a>
                   </div>
                   <div>

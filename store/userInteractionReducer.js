@@ -70,11 +70,13 @@ export default function blogReducer(state = initialState, action) {
     case GET_INTERACTIONS:
       return  {...state, alllikes: action.likes}
       case UPDATE_LIKE:
-        const likesWithoUpdate = state.alllikes.map(el => {el.likes = action.num})
+          let curObj = action.num;
+ 
+        const likesWithoUpdate = state.alllikes.map(el => {el.likes = curObj.likes})
 
         console.log('element to update update link =====================+>', likesWithoUpdate)
 
-    return {...state, currentLikesState: likesWithoUpdate, currentLikesNumber: action.num}
+    return {...state, currentLikesState: likesWithoUpdate, currentLikesNumber: curObj.likes}
     default:
         return state}
   }

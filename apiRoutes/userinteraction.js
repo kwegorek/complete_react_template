@@ -23,7 +23,7 @@ router.put('/', async function(req, res, next) {
         const prevLikes = await UserInteraction.findByPk(1); 
 
     
-        const updatedLikes = await prevLikes.update({likes:req.body.newLikesCount})
+        const updatedLikes = await prevLikes.update({likes:req.body.likes})
        
         res.json(updatedLikes)
       } catch (err) {
