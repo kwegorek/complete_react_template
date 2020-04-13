@@ -50,14 +50,14 @@ const Header = ({
                   <div className="footer-main">
                     <div className="footer-item">
                       {' '}
-                      <a href="#" className="fa">
+                      <a href="https://www.linkedin.com/in/katarzyna-wegorek" className="fa">
                         Linkedin{' '}
                       </a>
                     </div>
                     <div className="footer-item">
                       {' '}
                       <a
-                        href="https://www.linkedin.com/in/katarzyna-wegorek"
+                        href="https://medium.com/@ka.wegorek"
                         className="fa"
                       >
                         Medium
