@@ -44,7 +44,7 @@ const Header = ({
                     <br />
                     <br />
                     <div className="cv-btn">
-                      <a className="a-download">{section.contact}</a>
+                      <a href="https://www.linkedin.com/in/katarzyna-wegorek" className="a-download">{section.contact}</a>
                     </div>
                   </div>
                   <div className="footer-main">

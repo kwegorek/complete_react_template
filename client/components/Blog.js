@@ -68,40 +68,23 @@ class Blog extends React.Component {
 
 
     return (
-      <React.Fragment>
-         <div id='banner-blog-main'></div>
-       
-        <div id="blog" className="content-blog-container container-uni">
-          {translationVersion
-            ? translationVersion.map((section, indx) => {
-                return (
-                  
-                  <div key={indx}>
-                     
-                    <div>
-                      {/* <h1 id="blog-title">
-                        <span>{section.navaBar[4]}</span>
-                      </h1> */}
-                      
-                      <div id='blog-search'>
-                        <input  className='search-input'
-                          type="text"
-                          name="search"
-                          value={this.state.search}
-                          onChange={this.handleChange}
-                          placeholder="&#xF002;"
-                          // placeholder={section.searchByTag}
-                          
-                        ></input>
-                      </div>
-                      <div></div>
-                    </div>
-                  </div>
-                )
-              })
-            : null}
 
-          <div className="row-blog">
+
+<React.Fragment >
+<div id='banner-blog-main'></div>
+        <div id="contact" className="contact-grid-container container-uni">
+        <div >
+                    <input  
+                      type="text"
+                      name="search"
+                      value={this.state.search}
+                      onChange={this.handleChange}
+                      placeholder="&#xF002;"
+                 
+                      
+                    ></input>
+                  </div>
+    
             {this.state.search.length === 0
               ? blogPosts
                 ? blogPosts.map((post, indx) => {
@@ -113,28 +96,16 @@ class Blog extends React.Component {
                   return <Post key={indx} post={post} />
                 })
               : null}
+
+<div>
+          <GoBackHome/>
+
           </div>
-          <div>
-                        <Link
-                          to="/blog/addpost"
-                          style={{
-                            textDecoration: 'none',
-                            color: 'black',
-                            padding: '5px',
-                          }}
-                        >
-                          <i
-                            className="fa fa-plus-circle"
-                            aria-hidden="true"
-                          ></i>
-                        </Link>
-                        <span>Add Post</span>
-                      </div>
-          <div>
-            <GoBackHome />
-          </div>
+
+    
         </div>
       </React.Fragment>
+
     )
   }
 }

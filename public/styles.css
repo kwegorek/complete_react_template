@@ -1,6 +1,6 @@
-html {
-  scroll-behavior: smooth;
-}
+/* html {
+  scroll-behavior: hidden;
+} */
 
 * {
   box-sizing: border-box;
@@ -10,20 +10,25 @@ body {
   /* background-color: #fefefe; */
   color:black;
   background-color: #E8E8E8;
+  width:100%;
 
   font-size: 14px;
   line-height: 1em;
   margin: 0;
+  margin-bottom:auto;
 
   /* font-family: 'Roboto Slab', serif; */
   /* font-family: 'Roboto', sans-serif; */
 
-  /* overflow-y: scroll; */
+  overflow-x: scroll;
 
   /* /* background-color: #fefefe; */
 
 }
 
+#search-input{
+  width:170px;
+}
 
 .fa-home {
   font-size: 25px;
@@ -82,7 +87,7 @@ body {
 }
 
 .blog-item-add {
-  background-color: yellow;
+  /* background-color: yellow; */
   width: 100%;
   padding: 20px;
   /* text-align: center; */
@@ -165,8 +170,12 @@ ul .nav-item {
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
+ 
 
 }
+
+
+.blog-post-title-add{text-align:center}
 
 #nav-container .blog-link {
   margin-right: 60%;
@@ -180,6 +189,7 @@ footer {
   justify-content: center;
   background-color: #1b242f;
   /* color: white; */
+ margin-top: auto;
   height: 10vh;
 
 }
@@ -296,6 +306,12 @@ footer p {
 
 
  
+}
+
+.content-blog-container{
+  height:auto; 
+  padding:10px; 
+  margin:10px;
 }
 
 .content-project-container {
@@ -494,8 +510,8 @@ footer p {
   /* margin:1px; */
   margin: 15px 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width:30%;
-  height:350px;
+  /* width:100vh; */
+
 
 
 
@@ -775,17 +791,15 @@ p {
   justify-content: center;
 }
 
-.banner-blog-img{
-  width: 100%;
-  height: 160px;
-  /* object-fit: cover; */
-}
+
 
 .banner-blog-img{
-  width: 100%;
-  height: 160px;
-  /* object-fit: cover; */
-}
+  /* background-color: red; */
+  position: relative;
+  width: 50%;
+  padding-top:5%
+  
+} 
 
 
 .large-img-conatiner{
@@ -829,6 +843,17 @@ textarea, input {
     font-weight: normal;
     text-decoration: inherit;
 }
+
+.blog-search{
+  width:40px
+  
+}
+
+.search-input{
+  width: 100px;
+
+}
+
 
 
  input:hover{
@@ -945,7 +970,7 @@ textarea:hover{
 
 
 /* ###--------------------------media query--------------------------### */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 
 
   .footer-item {
@@ -992,14 +1017,33 @@ textarea:hover{
 
 
   .banner-text {
+    display: block;
     position: absolute;
-    top: 60vh;
+    top: 80vh;
     width: 100%;
   }
 
   #intro{
     font-size: 24px;
   }
+
+
+  .row-blog {
+    display: flex;
+    flex-direction: column
+    ;
+    flex-wrap: wrap;
+    align-items: flex-start; 
+       
+  }
+
+  .addpost-media{
+
+    text-align: left;
+    padding-left:50px;
+  }
+
+ 
   
 
 

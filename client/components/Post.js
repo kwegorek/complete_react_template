@@ -14,7 +14,7 @@ export const Post = (props) => {
   console.log(post)
 
   return (
-    <div id="blog-item-id" className="col-4 blog-item ">
+    <div id="blog-item-id" className="blog-item ">
       <div className="banner-blog">
         <img className="banner-blog-img" src={post.imageUrl}></img>
       </div>
@@ -51,9 +51,28 @@ export const Post = (props) => {
                 <i className="fa fa-eye" aria-hidden="true"></i>
               </a>
             </div>
+             {/* <div className='addpost-item-link'> 
+                        <Link
+                          to="/blog/addpost"
+                          style={{
+                            textDecoration: 'none',
+                            color: 'black',
+                            padding: '5px',
+                          }}
+                        >
+                          <i
+                            className="fa fa-plus-circle"
+                            aria-hidden="true"
+                          ></i>
+                        </Link>
+                        <span>Add Post</span>
+                      </div> */}
           </div>
         </div>
       </div>
     </div>
   )
 }
+
+
+

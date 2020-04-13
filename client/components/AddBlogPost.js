@@ -4,15 +4,27 @@ import {connect} from 'react-redux'
 import {addPostThunk, addPreviewPost, addPreviewPostThunk} from '../../store/blogReducer'
 import {Link, withRouter} from 'react-router-dom'
 
+let savedpost = { imageUrl:"",
+title: "",
+content: "", 
+tag:"", }
+if(localStorage.getItem('newpost')){
+  savedpost = JSON.parse(localStorage.getItem('newpost')); 
+}else{
+
+  localStorage.setItem('newpost',JSON.stringify(savedpost))
+
+}
+
 class AddBlogPost extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      imageUrl:"",
-      title: "",
-      content: "", 
-      tag:"", 
+      imageUrl:savedpost.title,
+      title: savedpost.title,
+      content: savedpost.title, 
+      tag:savedpost.title, 
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -21,7 +33,9 @@ class AddBlogPost extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mounted')
+ 
+
+   
   }
 
 
@@ -35,6 +49,9 @@ class AddBlogPost extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+
+  
+
   }
 
   handleSubmit(evt) {
@@ -50,6 +67,13 @@ class AddBlogPost extends React.Component {
       tag:mapTolowercaseTags , 
     }
 
+
+    localStorage.removeItem('newpost');
+
+    // savedpost = { imageUrl:"",
+    // title: "",
+    // content: "", 
+    // tag:"", }
 
     this.props.addPostThunk(newPost)
   }
@@ -68,6 +92,9 @@ class AddBlogPost extends React.Component {
       tag:mapTolowercaseTags , 
     }
 
+    localStorage.setItem('newpost',JSON.stringify(newPost))
+
+
 
     this.props.addPreviewPostThunk(newPost)
   }
@@ -82,10 +109,19 @@ class AddBlogPost extends React.Component {
 
     let previewData = this.props.previewPost; 
 
+  
+    
+
+    // if(window.localStorage.length){
+    //   localStorage.getItem(newPost, 'newPost')
+    // }
+
     console.log(previewData, 'addPreviewPostThunk')
 
     console.log(previewData)
     return (
+      <React.Fragment>
+      <div id='banner-blog-main'></div>
       <div className='add-post-container'>
         <div className='blog-post-title-add'><h1>Add Post</h1></div>
         <div>
@@ -128,7 +164,7 @@ class AddBlogPost extends React.Component {
             </button>
             <button onClick={evt => this.handlePreview(evt)} type="submit">
              
-              <Link  style={{ textDecoration: 'none', color: 'black' }}to='/blog/postpreview'>Click here to show Preview</Link>
+              <Link  style={{ textDecoration: 'none', color: 'black' }}to='/blog/postpreview'>Click here to show preview</Link>
             </button>
           </div>
         </form>
@@ -136,6 +172,7 @@ class AddBlogPost extends React.Component {
         </div>
 
       </div>
+      </React.Fragment>
     )
   }
 }

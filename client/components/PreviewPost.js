@@ -24,32 +24,73 @@ class PreviewPost extends React.Component {
     let currentTime = new Date().toLocaleString()
  
     return (
-        <React.Fragment>
-
-     
-        {post ? (
-        <div id="blog-item-id" className="col-4 blog-item ">
-        <div>
-          <img className="blog-pic" src="./img/milky-way-2695569_640.jpg" />
-        </div>
-  
-        <div className="blog-item-content">
-          <div className='title-edited-container'>
-          <h2 className='post-title'>{post.title}</h2>
-          <h5 className='post-tag'>{post.tsg}</h5>
-          <h5 >
-            Last edited: <span>{currentTime}</span>
-          </h5>
-
-          <div><p>{post.content}</p>
-            </div>
-  
+      <React.Fragment>
+      {post ? (
+        <div id="blog-item-large" className="col-12 blog-item ">
+          <div className="banner-blog large-img-conatiner">
+            <img
+              className="banner-blog-img-large"
+              src={post.imageUrl}
+            ></img>
           </div>
-         
-  
+
+          <div className="blog-item-content">
+            <div className="title-edited-co ntainer">
+              <div id="title-container-large">{post.title}</div>
+
+              <div className="post-love-comment-views-container">
+                <div>
+                  <a>
+                    <i
+                      id="heart"
+                      // onClick={(e) => this.handleClickInteraction(e)}
+                      className="fa fa-heart"
+                      aria-hidden="true"
+                    ></i>
+{/* 
+                    <span className="number-holder">{Number(likesAll)}</span> */}
+                  </a>
+                </div>
+                <div>
+                  <a>
+                    <i
+                      id="comments"
+                      // onClick={(e) => this.handleClickInteraction(e)}
+                      className="fa fa-comments"
+                      aria-hidden="true"
+                    ></i>
+                    <span className="number-holder"></span>
+                  </a>
+                </div>
+                <div>
+                  <a>
+                    <i
+                      id="seen"
+                      // onClick={(e) => this.handleClickInteraction(e)}
+                      className="fa fa-eye"
+                      aria-hidden="true"
+                    ></i>
+                    <span className="number-holder"></span>
+                  </a>
+                </div>
+              </div>
+              <div className="post-large-all-content">
+                <div id="content-container-large">{post.content}</div>
+                <div id="content-container-large">{post.contentPar2}</div>
+                <div id="content-container-large">{post.contentPar3}</div>
+                <div id="content-container-large">{post.contentPar4}</div>
+                <div id="content-container-large">
+                  {/* <img src={post.imageUrlAdditional1}></img> */}
+                </div>
+                <div id="content-container-large">{post.contentPar5}</div>
+
+                {/* <iframe width="800" height="600" frameborder="0" scrolling="no"src={post.iframe}></iframe> */}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>) : null}
-      </React.Fragment>
+      ) : null}
+    </React.Fragment>
         
     )
   }

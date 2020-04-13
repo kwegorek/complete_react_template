@@ -17,6 +17,7 @@ import AddBlogPost from './components/AddBlogPost'
 import PreviewPost from './components/PreviewPost'
 import Header from './components/Header'
 
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
@@ -26,7 +27,9 @@ ReactDOM.render(
         {/* Routes placed here are available to all visitors */}
         <Route exact path="/" component={Header} />
         <Route exact path="/home" component={Header} />
+     
         <Route exact path="/blog" component={Blog} />
+
         <Route exact path="/blog/addpost" component={AddBlogPost} />
         <Route exact path="/contact" component={ContactForm} />
         <Route exact path="/about" component={About} />
