@@ -160,7 +160,7 @@ ul .nav-item {
   line-height: 1.2em;
   position: fixed;
   height: 50px;
-  /* background-color: red; */
+  background-color:#fefefe;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -224,7 +224,7 @@ footer p {
 
 .banner-blog-img-large{
   width: 80%;
-  height: 400px;
+  height: 70%;
   /* object-fit: cover; */
 }
 

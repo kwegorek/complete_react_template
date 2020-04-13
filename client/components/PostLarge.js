@@ -93,7 +93,7 @@ class PostLarge extends React.Component {
             <div className="banner-blog large-img-conatiner">
               <img
                 className="banner-blog-img-large"
-                src="../img/blog1.jpg"
+                src={post.imageUrl}
               ></img>
             </div>
 
@@ -143,7 +143,7 @@ class PostLarge extends React.Component {
                   <div id="content-container-large">{post.contentPar3}</div>
                   <div id="content-container-large">{post.contentPar4}</div>
                   <div id="content-container-large">
-                    <img src={post.imageUrlAdditional1}></img>
+                    {/* <img src={post.imageUrlAdditional1}></img> */}
                   </div>
                   <div id="content-container-large">{post.contentPar5}</div>
 
