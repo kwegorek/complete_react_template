@@ -15,9 +15,7 @@ class ContactForm extends React.Component {
     this.state = {}
   }
 
-
   render() {
-
     let currentPlState = this.props.btnPL
     let currentEnState = this.props.btnEN
     let currentDeState = this.props.btnDE
@@ -49,64 +47,79 @@ class ContactForm extends React.Component {
       currentDeState
     )
 
-
     return (
       <React.Fragment>
+        {translationVersion
+          ? translationVersion.map((section, indx) => {
+              return (
+                <React.Fragment key={indx}>
+                  {/* <div id="banner-blog-main"></div> */}
+                  <div
+                    id="wrapper"
+                    className="contact-grid-container container-uni"
+                  >
+                    <div>
+                      <div id="first">
+                        <h2>CONTACT FORM</h2>
+                        <p className="contact-text">{section.contactText}</p>
 
-{translationVersion
-? translationVersion.map((section, indx) => {
-return (
+                        <input
+                          type="text"
+                          id="username"
+                          name="username"
+                          placeholder={section.name}
+                        />
 
+                        <input
+                          type="text"
+                          id="email"
+                          name="email"
+                          placeholder={section.email}
+                        />
 
-<React.Fragment key={indx}>
-<div id='banner-blog-main'></div>
-        <div id="contact" className="contact-grid-container container-uni">
-          <div className="row">
-            <div className="col-12">
-              <h1>CONTACT ME</h1>
-            </div>
-          </div>
-          <div id="contact-wrapper" className="row">
-            <p className="contact-text">
-             {section.contactText}
-            </p>
-            <div className="col-12  media-col">
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder={section.name}
-              />
-            </div>
-            <div className="col-12  media-col">
-              <input type="text" id="email" name="email" placeholder={section.email}/>
-            </div>
-            <div className="col-12  media-col">
-              <textarea className="user-message" placeholder={section.message}></textarea>
-            </div>
-            <div className="col-12  media-col">
-              <button type="submit" id="send-btn">
-               {section.send}
-              </button>
-            </div>
-          </div>
-          <div>
-          <GoBackHome/>
+                        <textarea
+                          className="user-message"
+                          placeholder={section.message}
+                        ></textarea>
 
-          </div>
-    
-        </div>
-      </React.Fragment>)
-})
-: null}
+                        <button type="submit" id="send-btn">
+                          {section.send}
+                        </button>
+                      </div>
+                    </div>
 
-
+                    <div id="second">
+                      <h2>GET IN TOUCH</h2>
+                      <h2>
+                        <span>
+                          <i className="fa fa-map-marker"></i>
+                        </span>
+                        New York City, New York
+                      </h2>
+                      <h2>
+                        <span>
+                          <i className=" fa fa-envelope"></i>
+                        </span>
+                        ka.wegorek@gmail.com
+                      </h2>
+                      <h2>
+                        <span>
+                          <i className=" fa fa-phone"></i>
+                        </span>
+                      </h2>
+                    </div>
+                  </div>
+                  {/* <div>
+                    <GoBackHome />
+                  </div> */}
+                </React.Fragment>
+              )
+            })
+          : null}
       </React.Fragment>
-     
     )
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {

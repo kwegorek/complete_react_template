@@ -34,7 +34,7 @@ const About = ({
 
 
     <div id="projects-href" className="content-about-container">
-           <div id='banner-blog-main'></div>
+           {/* <div id='banner-blog-main'></div> */}
     {translationVersion
       ? translationVersion.map((section, indx) => {
           return (
@@ -86,9 +86,9 @@ const About = ({
                     </div>
 
                     
-                  <div className="about-backto-homepage">
+                  {/* <div className="about-backto-homepage">
                     <GoBackHome />
-                  </div>
+                  </div> */}
                 </div>
               </div>
           )

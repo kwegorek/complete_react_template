@@ -15,15 +15,16 @@ export const Post = (props) => {
 
   return (
     <div id="blog-item-id" className="blog-item ">
+      
       <div className="banner-blog">
         <img className="banner-blog-img" src={post.imageUrl}></img>
       </div>
 
       <div className="blog-item-content">
-        <div className="title-edited-container">
-          <div className="title-container">
-            <div className="title-container-item">
-              {' '}
+      
+        
+           
+           
               <h2 className="post-title">
                 {post.title}
                 <span>
@@ -32,8 +33,8 @@ export const Post = (props) => {
                   </Link>
                 </span>
               </h2>
-            </div>
-          </div>
+            
+      
 
           <div className="post-love-comment-views-container">
             <div>
@@ -68,7 +69,7 @@ export const Post = (props) => {
                         <span>Add Post</span>
                       </div> */}
           </div>
-        </div>
+       
       </div>
     </div>
   )

@@ -71,7 +71,7 @@ class Blog extends React.Component {
 
 
 <React.Fragment >
-<div id='banner-blog-main'></div>
+
         <div id="contact" className="contact-grid-container container-uni">
         <div >
                     <input  
@@ -97,10 +97,6 @@ class Blog extends React.Component {
                 })
               : null}
 
-<div>
-          <GoBackHome/>
-
-          </div>
 
     
         </div>

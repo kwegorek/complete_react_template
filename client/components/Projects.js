@@ -33,7 +33,7 @@ export const Projects = ({
 
   return (
     <div id="projects-href" className="content-project-container">
-           <div id='banner-blog-main'></div>
+           {/* <div id='banner-blog-main'></div> */}
       {translationVersion
         ? translationVersion.map((section, indx) => {
             return (
@@ -65,7 +65,7 @@ export const Projects = ({
                   </div>
                 </div>
 
-                <GoBackHome />
+                {/* <GoBackHome /> */}
               </React.Fragment>
             )
           })

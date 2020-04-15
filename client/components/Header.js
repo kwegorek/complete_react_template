@@ -32,7 +32,7 @@ const Header = ({
 
   return (
     <div>
-      <div className="header-banner"></div>
+      {/* <div className="header-banner"></div> */}
       <div>
         {translationVersion
           ? translationVersion.map((section, indx) => {
@@ -46,8 +46,7 @@ const Header = ({
                     <div className="cv-btn">
                       <a href="https://www.linkedin.com/in/katarzyna-wegorek" className="a-download">{section.contact}</a>
                     </div>
-                  </div>
-                  <div className="footer-main">
+                    <div className="footer-main">
                     <div className="footer-item">
                       {' '}
                       <a href="https://www.linkedin.com/in/katarzyna-wegorek" className="fa">
@@ -69,6 +68,8 @@ const Header = ({
                       </a>
                     </div>
                   </div>
+                  </div>
+                  
                 </React.Fragment>
               )
             })
