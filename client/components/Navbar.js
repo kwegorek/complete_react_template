@@ -91,7 +91,7 @@ class Navbar extends React.Component {
     )
 
     let translationVersion = translation
-    let navBar = {borderBottom: 'solid 3px #fff', paddingBottom: '1em'}
+    let navBar = {borderBottom: 'solid 3px #fde168', paddingBottom: '1em'}
 
     return (
       

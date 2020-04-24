@@ -53,12 +53,41 @@ class ContactForm extends React.Component {
           ? translationVersion.map((section, indx) => {
               return (
                 <React.Fragment key={indx}>
+
+<div id="wrapper-contact">
+ <h1 className='contact-title'>{section.contactText}</h1>
+ <div> <p><i className="fa fa-map-marker"></i>New York City, NY/Warsaw, Poland</p></div>
+ <div><p><i className="fa fa-envelope"></i> ka.wegorek@gmail.com</p></div>
+ <div><p><i className="fa fa-phone"></i> ka.wegorek@gmail.com</p></div>
+                      {/* <div>
+                      <h2>GET IN TOUCH</h2>
+                      <h2>
+                        <span>
+                          <i className="fa fa-map-marker"></i>
+                        </span>
+                        New York City, New York
+                      </h2>
+                      <h2>
+                        <span>
+                          <i className=" fa fa-envelope"></i>
+                        </span>
+                        ka.wegorek@gmail.com
+                      </h2>
+                      <h2>
+                        <span>
+                          <i className=" fa fa-phone"></i>
+                        </span>
+                      </h2>
+
+                      </div>
+                   */}
+                    </div>
                   {/* <div id="banner-blog-main"></div> */}
-                  <div
+                  {/* <div
                     id="wrapper"
                     className="contact-grid-container container-uni"
                   >
-                    <div>
+                    <div id='media-query-form'>
                       <div id="first">
                         <h2>CONTACT FORM</h2>
                         <p className="contact-text">{section.contactText}</p>
@@ -88,27 +117,7 @@ class ContactForm extends React.Component {
                       </div>
                     </div>
 
-                    <div id="second">
-                      <h2>GET IN TOUCH</h2>
-                      <h2>
-                        <span>
-                          <i className="fa fa-map-marker"></i>
-                        </span>
-                        New York City, New York
-                      </h2>
-                      <h2>
-                        <span>
-                          <i className=" fa fa-envelope"></i>
-                        </span>
-                        ka.wegorek@gmail.com
-                      </h2>
-                      <h2>
-                        <span>
-                          <i className=" fa fa-phone"></i>
-                        </span>
-                      </h2>
-                    </div>
-                  </div>
+                  </div> */}
                   {/* <div>
                     <GoBackHome />
                   </div> */}

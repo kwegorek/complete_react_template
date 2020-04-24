@@ -1,5 +1,11 @@
 const blogposts = [
   {
+    title: 'Location and internationalization.',
+    content: 'COMING SOON (...)',
+    tag: ['javascript'],
+    imageUrl: 'https://cdn.pixabay.com/photo/2020/02/25/05/03/web-4877960_1280.jpg',
+  },
+  {
     title: 'Where two linked lists intersect?',
     content:
       'Solving data structure problems may be tough for a beginner. You look at the problem and a question arises: where do I start? Recently I was solving a problem of finding an intersection of two linked lists. After analyzing the problem I came up with a solution, which I explain below.',
@@ -30,23 +36,18 @@ const blogposts = [
   {
     title: 'Coding challenges: find a needle in a haystack.',
     tag: ['javascript', 'datastructures'],
-    content: 'Coding languages [...]',
+    content: 'COMING SOON (...)',
     imageUrl: 'https://cdn.pixabay.com/photo/2014/07/09/22/46/dried-grass-388660_1280.jpg',
   },
   {
-    title: 'Coding languages: Finding the shortest path.',
+    title: 'Coding challanges: Finding the shortest path.',
     tag: ['javascript', 'datastructures'],
     content:
-      'Working on a project is itself a complex. VSC Extensions are very helpful and are facilitating your projects.  In order to use commands that are coming with your extensions you should use command line that comes up with VSC. Use keyboard shortcut [command]+ [left shift] + [P].',
+    'COMING SOON (...)',
     imageUrl: 'https://cdn.pixabay.com/photo/2013/11/28/10/36/road-220058_1280.jpg',
     
   },
-  {
-    title: 'Location and internationalization in React app.',
-    content: 'Coding languages [...]',
-    tag: ['javascript'],
-    imageUrl: 'https://cdn.pixabay.com/photo/2020/02/25/05/03/web-4877960_1280.jpg',
-  },
+
 ]
 
 const users = [{name: 'Ninja'}]

@@ -62,10 +62,10 @@ const About = ({
                     <p>{section.aboutStoryFavouriteApp}</p>
                   </div> */}
 
-                  <div>
+                  <div  className='skills-container'>
                   <h1 id='skills-title'>SKILLS</h1>
             
-                    <p className='skills-container'>
+                    <p className='skills-container-all'>
                     JavaScript, HTML/CSS, React, Redux, Express, Sequelize, SQL, PostgreSQL, Git, GitHub, BASH
                     </p>
                  

@@ -11,8 +11,11 @@ import userInteractionReducer from './userInteractionReducer'
 
 const reducer = combineReducers({blogReducer, languageReducer, btnReducer, userInteractionReducer})
 const middleware = composeWithDevTools(
-  applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
+  applyMiddleware(thunkMiddleware)
 )
 const store = createStore(reducer, middleware)
 
 export default store
+
+
+// createLogger({collapsed: true})

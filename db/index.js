@@ -123,7 +123,7 @@ const PLTranslate = db.define('pl', {
 
   contactText: {
     type: Sequelize.STRING,
-    defaultValue: 'Pytania? Proszę o kontakt',
+    defaultValue: 'KONTAKT',
   },
 
   send: {
@@ -269,7 +269,7 @@ const ENTranslate = db.define('en', {
 
   contactText: {
     type: Sequelize.STRING,
-    defaultValue: 'Do you have any questions or comments? Please, share!',
+    defaultValue: 'GET IN TOUCH',
   },
 
   send: {
@@ -415,7 +415,7 @@ const DETranslate = db.define('de', {
 
   contactText: {
     type: Sequelize.STRING,
-    defaultValue: 'Kann ich Ihnen helefen?',
+    defaultValue: 'KANN ICH IHNEN HELFEN?',
   },
 
   send: {
