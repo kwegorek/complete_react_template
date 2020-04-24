@@ -32,7 +32,7 @@ const Header = ({
 
   return (
     <div>
-      {/* <div className="header-banner"></div> */}
+      <div className="header-banner"></div>
       <div>
         {translationVersion
           ? translationVersion.map((section, indx) => {

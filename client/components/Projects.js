@@ -45,19 +45,19 @@ export const Projects = ({
                   <div className="row-projects">
 
                     <div className="col-4 project-item">
-                      <a href='https://traffic-tracker-gh.herokuapp.com/'><img src="./img/traffic.png" /></a>
+                      <a href='https://traffic-tracker-gh.herokuapp.com/'><img className='projects-img'src="./img/traffic.png" /></a>
                       <h1>{section.projectsTitle[0]}</h1>
                       <p>{section.projectsDesc[0]}</p>
                     </div>
 
                     <div className="col-4 project-item">
-                      <a href='https://grace-shopper-cornpops.herokuapp.com/'><img src="./img/shop.png" /></a>
+                      <a href='https://grace-shopper-cornpops.herokuapp.com/'><img className='projects-img'src="./img/shop.png" /></a>
                       <h1>{section.projectsTitle[1]}</h1>
                       <p>{section.projectsDesc[1]}</p>
                     </div>
 
                     <div className="col-4 project-item">
-                      <a href='https://stormlooper.github.io/Exit/'><img src="./img/exit.png" /></a>
+                      <a href='https://stormlooper.github.io/Exit/'><img className='projects-img' src="./img/exit.png" /></a>
                       <h1>{section.projectsTitle[2]}</h1>
                       <p>{section.projectsDesc[2]}</p>
                     </div>

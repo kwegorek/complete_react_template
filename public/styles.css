@@ -12,15 +12,17 @@ body {
   background-color: #E8E8E8;
   width:100%;
 
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1em;
   margin: 0;
   margin-bottom:auto;
+  font-family: Muli, sans-serif;
 
   /* font-family: 'Roboto Slab', serif; */
   /* font-family: 'Roboto', sans-serif; */
 
   overflow-x: scroll;
+  /* background-color: #1b242f; */
 
   /* /* background-color: #fefefe; */
 
@@ -229,6 +231,8 @@ footer p {
   background-size: cover;
   text-align: center;
   position: relative;
+  background-color: #1b242f;
+   
 }
 
 
@@ -260,13 +264,13 @@ footer p {
 .a-download {
   text-decoration: none;
   color: #fff;
-  background: teal;
+  /* background: teal; */
   /* filter: none; */
   padding: 0.5em 2.3em;
   font-size: 1.2em;
   border-radius: 6px;
   border: 0.5px #fff solid;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px 0 rgba(245, 245, 245, 0.2);
 }
 
 .cv-btn {
@@ -280,10 +284,11 @@ footer p {
   position: absolute;
   top: 35vh;
   width: 100%;
+
 }
 
 .banner-text h1 {
-  /* color: white; */
+  color: #fff ;
   position: relative;
   text-align: center;
   /* font-weight: bolder */
@@ -307,6 +312,8 @@ footer p {
 
  
 }
+
+
 
 .content-blog-container{
   height:auto; 
@@ -864,11 +871,13 @@ h1,h2 { font-weight:normal; }
 .footer-main {
   display: flex;
   flex-direction: row;
-  background-color: #E8E8E8;
+  color:white;
+
   /* background-color: teal; */
   padding-top:180px;
  
   justify-content: center;
+  background-color: #1b242f;
 }
 
 
@@ -994,10 +1003,11 @@ textarea:hover{
 
 
 .footer-item a {
-  color:black;
+  color:white;
   font-size: 25px;
   /* line-height: 1.5em; */
   padding: 30px;
+  padding-top:0
 
 
 
@@ -1077,7 +1087,7 @@ textarea:hover{
 
 
   .footer-item {
-    padding-top: 20px;
+    padding-top: 5px;
     text-align: center;
   }
 
@@ -1091,6 +1101,7 @@ textarea:hover{
   .row-projects div {
     width: 100% !important;
     background-color: #E8E8E8;
+    height:auto
   }
 
 
@@ -1115,6 +1126,11 @@ textarea:hover{
   #pic-boat{
     width:250px;
     padding:10px;
+  
+  }
+
+  .projects-img{
+    width:70px;
   
   }
 
@@ -1144,6 +1160,11 @@ textarea:hover{
 
     text-align: left;
     padding-left:50px;
+  }
+
+  .projects-img{
+    width:30px;
+  
   }
 
  

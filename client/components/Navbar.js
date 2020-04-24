@@ -91,8 +91,10 @@ class Navbar extends React.Component {
     )
 
     let translationVersion = translation
+    let navBar = {borderBottom: 'solid 3px #fff', paddingBottom: '1em'}
 
     return (
+      
       <div>
         {translationVersion
           ? translationVersion.map((section, indx) => {
@@ -105,7 +107,8 @@ class Navbar extends React.Component {
                           style={{textDecoration: 'none', color: 'black'}}
                           className="nav-item navbar-home"
                           to="/home"
-                          activeStyle={{backgrounud: 'orange'}}
+                          exact
+                          activeStyle={navBar}
                         >
                           {section.navaBar[0]}
                         </NavLink>
@@ -114,7 +117,8 @@ class Navbar extends React.Component {
                           style={{textDecoration: 'none', color: 'black'}}
                           className="nav-item"
                           to="/about"
-                          activeStyle={{backgrounud: 'orange'}}
+                          exact
+                          activeStyle={navBar}
                         >
                           {section.navaBar[1]}
                         </NavLink>
@@ -122,7 +126,8 @@ class Navbar extends React.Component {
                           style={{textDecoration: 'none', color: 'black'}}
                           className="nav-item"
                           to="/projects"
-                          activeStyle={{backgrounud: 'orange'}}
+                          exact
+                          activeStyle={navBar}
                         >
                           {section.navaBar[2]}
                         </NavLink>
@@ -130,7 +135,8 @@ class Navbar extends React.Component {
                           style={{textDecoration: 'none', color: 'black'}}
                           className="nav-item"
                           to="/contact"
-                          activeStyle={{backgrounud: 'orange'}}
+                          exact
+                          activeStyle={navBar}
                         >
                           {section.navaBar[3]}
                         </NavLink>
@@ -138,7 +144,8 @@ class Navbar extends React.Component {
                           style={{textDecoration: 'none', color: 'black'}}
                           className="nav-item"
                           to="/blog"
-                          activeStyle={{backgrounud: 'orange'}}
+                          exact
+                          activeStyle={navBar}
                         >
                           {section.navaBar[4]}
                         </NavLink>
@@ -153,6 +160,7 @@ class Navbar extends React.Component {
                         >
                           {' '}
                           PL
+                          
                         </a>
                         <a
                           href="#"
