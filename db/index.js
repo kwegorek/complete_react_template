@@ -78,12 +78,12 @@ const PLTranslate = db.define('pl', {
   about: {
     type: DataTypes.TEXT,
     defaultValue:
-      'Prawniczka z praktyką i wykształceniem uzyskanym w Europie. Absolwentka Fullstack Academy w Nowym Jorku. Interesują mnie nowe technologie i doskonalnie w sztuce programowania.',
+      'Prawniczka z praktyką i wykształceniem uzyskanym w Europie. Absolwentka Fullstack Academy w Nowym Jorku.',
   },
   aboutStory: {
     type: DataTypes.TEXT,
     defaultValue:
-      'W młodości zakochałam się w żeglarstwie. Żeglowałam po Europie, zarówno po jeziorach, jak i morzach. Moją ulubioną wycieczką była 7-dniowa wycieczka między chorwackimi wyspami, gdzie każdą noc spędzałam na innej wyspie. Moją następną przygodą będzie żeglowanie przez wyspy Karaibów i Tajlandii.',
+      'W młodości zakochałam się w żeglarstwie. Moją ulubioną wycieczką była 7-dniowa wycieczka między chorwackimi wyspami, gdzie każdą noc spędzałam na innej wyspie. Moją następną przygodą będzie żeglowanie przez wyspy Karaibów i Tajlandii.',
   },
   aboutStoryFavouriteApp: {
     type: DataTypes.TEXT,
@@ -241,7 +241,7 @@ const ENTranslate = db.define('en', {
   projectsDesc: {
     type: Sequelize.ARRAY(Sequelize.TEXT),
     defaultValue: [
-      'Application tracking the traffic between given points. TrafficTracer visualizes traffic patterns and will help you reduce your commute time. Gathers the real-time traffic data between given points and presents how it changes over time.',
+      'Application tracking the traffic between given points. Traffic Tracker visualizes traffic patterns and will help you reduce your commute time. Gathers the real-time traffic data between given points and presents how it changes over time.',
       'Online shopping site where users can ourchase cereals. Consumers are provided with a fully implemented shopping cart functionality. Project developed with React, JavaScript and relational database.',
       'Virtual Reality Escape Room, built with React360. It is a VR Experience where a player needs to find clues to solve puzzles and find his way out of the Room.',
     ],
@@ -254,7 +254,7 @@ const ENTranslate = db.define('en', {
 
   projectsTitle: {
     type: Sequelize.ARRAY(Sequelize.STRING),
-    defaultValue: ['Traffic Tracker', 'GraceShopper', 'VR Escape Room'],
+    defaultValue: ['Traffic Tracker', 'Grace Shopper', 'VR Escape Room'],
   },
 
   project: {
