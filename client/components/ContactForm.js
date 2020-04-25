@@ -58,7 +58,7 @@ class ContactForm extends React.Component {
  <h1 className='contact-title'>{section.contactText}</h1>
  <div> <p><i className="fa fa-map-marker"></i>New York City, NY/Warsaw, Poland</p></div>
  <div><p><i className="fa fa-envelope"></i> ka.wegorek@gmail.com</p></div>
- <div><p><i className="fa fa-phone"></i> ka.wegorek@gmail.com</p></div>
+ <div><p><i className="fa fa-phone"></i>882 662 917</p></div>
                       {/* <div>
                       <h2>GET IN TOUCH</h2>
                       <h2>
