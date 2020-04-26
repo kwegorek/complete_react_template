@@ -123,7 +123,7 @@ class Navbar extends React.Component {
     )
 
     let translationVersion = translation
-    let navBar = {borderBottom: 'solid 3px #fde168', paddingBottom: '0.1em'}
+    let navBar = {borderBottom: 'solid 1px red', paddingBottom: '0.1em'}
  
 
 
@@ -154,7 +154,7 @@ class Navbar extends React.Component {
                             className="nav-item navbar-home"
                             to="/home"
                             exact
-                            activeStyle={navBar}
+                            // activeStyle={navBar}
                           >        <h5  className='dropdownIcon'><p className='home-nav'> {section.navaBar[0]}</p><p className='dropdownIcon' onClick={(e)=>this.dropDownMenu(e)}> &#9776;</p>              </h5>
              
                           </NavLink>
