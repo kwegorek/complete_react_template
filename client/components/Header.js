@@ -31,9 +31,9 @@ const Header = ({
   let translationVersion = returnLanguageVersion(btnPL, btnEN, btnDE)
 
   return (
-    <div>
-      <div className="header-banner"></div>
-      <div>
+    <div >
+      <div id="main-background"></div>
+      <div >
         {translationVersion
           ? translationVersion.map((section, indx) => {
               return (

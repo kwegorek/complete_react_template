@@ -16,6 +16,7 @@ import {Link, withRouter} from 'react-router-dom'
 class Navbar extends React.Component {
   constructor(props) {
     super(props)
+    this.myRef = React.createRef();
 
     this.state = {}
 
@@ -23,6 +24,7 @@ class Navbar extends React.Component {
     this.handleClickPL = this.handleClickPL.bind(this)
     this.handleClickEN = this.handleClickEN.bind(this)
     this.handleClickDE = this.handleClickDE.bind(this)
+    this.dropDownMenu = this.dropDownMenu.bind(this)
   }
 
   handleClickPL() {
@@ -56,7 +58,37 @@ class Navbar extends React.Component {
     this.props.changePLBtn(false)
     this.props.changeENBtn(true)
     this.props.changeDEBtn(false)
+
+    console.log(this.myRef, 'myRef')
   }
+
+  dropDownMenu(e){
+
+    let eventarget = e
+    console.log(e.target, 'e')
+
+    const node = this.myRef.current;
+    console.log(node.className, 'clicked')
+
+    if(node.className === 'nav-container'){
+
+      node.className = ' ';
+      node.className = 'responsive';
+
+    }else {
+
+      node.className= 'nav-container'
+
+
+    }
+
+ 
+
+
+
+  }
+
+ 
 
   render() {
     let currentPlState = this.props.btnPL
@@ -91,10 +123,11 @@ class Navbar extends React.Component {
     )
 
     let translationVersion = translation
-    let navBar = {borderBottom: 'solid 3px #fde168', paddingBottom: '1em'}
+    let navBar = {borderBottom: 'solid 3px #fde168', paddingBottom: '0.1em'}
+ 
+
 
     return (
-      
       <div>
         {translationVersion
           ? translationVersion.map((section, indx) => {
@@ -102,91 +135,132 @@ class Navbar extends React.Component {
                 <div key={indx}>
                   <header>
                     <nav>
-                      <ul className="nav-container">
-                        <NavLink
-                          style={{textDecoration: 'none', color: 'black'}}
-                          className="nav-item navbar-home"
-                          to="/home"
-                          exact
-                          activeStyle={navBar}
-                        >
-                          {section.navaBar[0]}
-                        </NavLink>
 
-                        <NavLink
-                          style={{textDecoration: 'none', color: 'black'}}
-                          className="nav-item"
-                          to="/about"
-                          exact
-                          activeStyle={navBar}
-                        >
-                          {section.navaBar[1]}
-                        </NavLink>
-                        <NavLink
-                          style={{textDecoration: 'none', color: 'black'}}
-                          className="nav-item"
-                          to="/projects"
-                          exact
-                          activeStyle={navBar}
-                        >
-                          {section.navaBar[2]}
-                        </NavLink>
-                        <NavLink
-                          style={{textDecoration: 'none', color: 'black'}}
-                          className="nav-item"
-                          to="/contact"
-                          exact
-                          activeStyle={navBar}
-                        >
-                          {section.navaBar[3]}
-                        </NavLink>
-                        <NavLink
-                          style={{textDecoration: 'none', color: 'black'}}
-                          className="nav-item"
-                          to="/blog"
-                          exact
-                          activeStyle={navBar}
-                        >
-                          {section.navaBar[4]}
-                        </NavLink>
-                        <a
-                          href="#"
-                          style={{
-                            textDecoration: 'none',
-                            color: 'black',
-                          }}
-                          className="nav-item nav-lang"
-                          onClick={this.handleClickPL}
-                        >
+           
+                      <ul id='dropDownClick' className="nav-container" ref={this.myRef}>
+                        <li  className="list-item">
                           {' '}
-                          PL
-                          
-                        </a>
-                        <a
-                          href="#"
-                          style={{
-                            textDecoration: 'none',
-                            color: 'black',
-                          }}
-                          className="nav-item nav-lang"
-                          onClick={this.handleClickEN}
-                        >
+                          <NavLink
+                            style={{textDecoration: 'none', color: 'black'}}
+                            className="nav-item navbar-home home-main"
+                            to="/home"
+                            exact
+                            activeStyle={navBar}
+                          >       {section.navaBar[0]}
+             
+                          </NavLink>
+                          <NavLink
+                            style={{textDecoration: 'none', color: 'black'}}
+                            className="nav-item navbar-home"
+                            to="/home"
+                            exact
+                            activeStyle={navBar}
+                          >        <h5  className='dropdownIcon'><p className='home-nav'> {section.navaBar[0]}</p><p className='dropdownIcon' onClick={(e)=>this.dropDownMenu(e)}> &#9776;</p>              </h5>
+             
+                          </NavLink>
+  
+                        </li>
+                        
+                        <li className="list-item">
                           {' '}
-                          DE
-                        </a>
-                        <a
-                          href="#"
-                          style={{
-                            textDecoration: 'none',
-                            color: 'black',
-                          }}
-                          className="nav-item nav-lang"
-                          onClick={this.handleClickDE}
-                        >
+                          <NavLink
+                            style={{textDecoration: 'none', color: 'black'}}
+                            className="nav-item"
+                            to="/about"
+                            exact
+                            activeStyle={navBar}
+                          >
+                            {section.navaBar[1]}
+                          </NavLink>
+                        </li>
+
+                        <li className="list-item">
                           {' '}
-                          EN
-                        </a>
+                          <NavLink
+                            style={{textDecoration: 'none', color: 'black'}}
+                            className="nav-item"
+                            to="/projects"
+                            exact
+                            activeStyle={navBar}
+                          >
+                            {section.navaBar[2]}
+                          </NavLink>
+                        </li>
+
+                        <li className="list-item">
+                          {' '}
+                          <NavLink
+                            style={{textDecoration: 'none', color: 'black'}}
+                            className="nav-item"
+                            to="/contact"
+                            exact
+                            activeStyle={navBar}
+                          >
+                            {section.navaBar[3]}
+                          </NavLink>
+                        </li>
+
+                        <li className="list-item">
+                          <NavLink
+                            style={{textDecoration: 'none', color: 'black'}}
+                            className="nav-item"
+                            to="/blog"
+                            exact
+                            activeStyle={navBar}
+                          >
+                            {section.navaBar[4]}
+                          </NavLink>
+                        </li>
+
+                        <li className="list-item">
+                          <a
+                            href="#"
+                            style={{
+                              textDecoration: 'none',
+                              color: 'black',
+                            }}
+                            className="nav-item nav-lang"
+                            onClick={this.handleClickPL}
+                          >
+                            {' '}
+                            PL
+                          </a>
+                        </li>
+
+                        <li className="list-item">
+                          <a
+                            href="#"
+                            style={{
+                              textDecoration: 'none',
+                              color: 'black',
+                            }}
+                            className="nav-item nav-lang"
+                            onClick={this.handleClickEN}
+                          >
+                            {' '}
+                            DE
+                          </a>
+                        </li>
+
+                        <li className="list-item">
+                          <a
+                            href="#"
+                            style={{
+                              textDecoration: 'none',
+                              color: 'black',
+                            }}
+                            className="nav-item nav-lang"
+                            onClick={this.handleClickDE}
+                          >
+                            {' '}
+                            EN
+                          </a>
+                        </li>
+                       
+    
+                       
                       </ul>
+                      
                     </nav>
                   </header>
                 </div>
