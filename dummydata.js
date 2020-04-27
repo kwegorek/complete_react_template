@@ -1,7 +1,11 @@
 const blogposts = [
   {
     title: 'Location and internationalization.',
-    content: 'COMING SOON (...)',
+    content: 'Any application that relies not only on its technical features but involves human interaction for a correct functioning demands adapting for use in different cultural environment and with different languages.',
+    contentPar2:"Internationalization and localization are key concepts in software architecture that need to be considered at the initial stage of a software design.", 
+    contentPar3:"Definitions of internationalization vary. Internationalization is the design and development of a product, application or document content that enables easy localization for target audiences that vary in culture, region, or language. Internationalization in this context is often abbreviated to i18n, where 18 is the number of letters between i and n in the word internationalization. Sometimes the word globalization is used instead of internationalization. When that is the case, it is sometimes abbreviated as g11n.", 
+    contentPar4:"Localization refers to the adaptation of a product, application or document content to meet the language, cultural and other requirements of a specific target market (a locale). Localization is sometimes written as l10n, where 10 is the number of letters between l and n.",
+    contentPar5:"One of the characteristic attributed to a software is its portability, which means that a software can be used in an operating systems other than the one in which it was created without requiring major rework. Once a software system is made portable for different environments, it is important that portability is maintained. It should be taken into consideration if future modifications may affect its portability. During testing, it must be verified whether or not, modifications are adversely affecting any requirements for portability.", 
     tag: ['javascript'],
     imageUrl: 'https://cdn.pixabay.com/photo/2020/02/25/05/03/web-4877960_1280.jpg',
   },

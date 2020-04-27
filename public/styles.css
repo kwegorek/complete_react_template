@@ -1295,6 +1295,8 @@ li{
     flex-direction:row;
     /* background-color: blueviolet; */
 
+    padding:0
+
   } 
 
   .list-item{
@@ -1310,8 +1312,8 @@ li{
 
     display: flex;
     flex-direction: column;
-
-    line-height: 0.3em;
+/* 
+    line-height: 0.3em; */
 
   
     justify-content:center;
@@ -1335,7 +1337,7 @@ li{
     display: flex;
     flex-direction: column;
 
-    line-height: 0.3em;
+    /* line-height: 0.3em; */
 
   
     justify-content:center;
@@ -1377,6 +1379,24 @@ li{
   
 
 
+}
+
+
+#title-container-large{
+  padding: 20px;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  text-align: center;
+
+}
+
+
+#content-container-large{
+  font-size: 1em;
+  line-height: 1.5em;
+  padding:0.5em;
+
+ 
 }
 
 

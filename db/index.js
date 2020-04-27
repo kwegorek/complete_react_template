@@ -83,7 +83,7 @@ const PLTranslate = db.define('pl', {
   aboutStory: {
     type: DataTypes.TEXT,
     defaultValue:
-      'W młodości zakochałam się w żeglarstwie. Moją ulubioną wycieczką była 7-dniowa wycieczka między chorwackimi wyspami, gdzie każdą noc spędzałam na innej wyspie. Moją następną przygodą będzie żeglowanie przez wyspy Karaibów i Tajlandii.',
+      'W młodości zakochałam się w żeglarstwie. Moim ulubionym rejsem był 7-dniowy, między chorwackimi wyspami, gdzie każdą noc spędzałam na innej wyspie. Moją następną przygodą będzie żeglowanie przez wyspy Karaibów i Tajlandii.',
   },
   aboutStoryFavouriteApp: {
     type: DataTypes.TEXT,
