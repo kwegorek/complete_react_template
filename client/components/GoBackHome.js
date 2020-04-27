@@ -26,8 +26,7 @@ export const GoBackHome = ({
     }
   
     let translationVersion = returnLanguageVersion(btnPL, btnEN, btnDE)
-    console.log(translationVersion, 'translationVersion')
-  
+
 
 
 

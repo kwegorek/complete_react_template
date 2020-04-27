@@ -41,12 +41,7 @@ class Blog extends React.Component {
     let entranslation = this.props.enTranslation
     let detranslation = this.props.deTranslation
 
-    console.log(
-      currentPlState,
-      currentEnState,
-      currentDeState,
-      'currentDeState'
-    )
+  
 
     function returnLanguageVersion(currentPlState, currentDeState) {
       if (currentPlState === true) {
@@ -118,7 +113,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log('dispatched gotPosts)')
+
   return {
     gotPosts: () => dispatch(gotPosts()),
   }

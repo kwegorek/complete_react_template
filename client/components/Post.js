@@ -11,48 +11,40 @@ import {
 export const Post = (props) => {
   let post = props.post
   let readMore = `/post/${post.id}`
-  console.log(post)
 
   return (
     <div id="blog-item-id" className="blog-item ">
-      
       <div className="banner-blog">
         <img className="banner-blog-img" src={post.imageUrl}></img>
       </div>
 
       <div className="blog-item-content">
-      
-        
-           
-           
-              <h2 className="post-title">
-                {post.title}
-                <span>
-                  <Link to={readMore} className="display-more">
-                    Read more
-                  </Link>
-                </span>
-              </h2>
-            
-      
+        <h2 className="post-title">
+          {post.title}
+          <span>
+            <Link to={readMore} className="display-more">
+              Read more
+            </Link>
+          </span>
+        </h2>
 
-          <div className="post-love-comment-views-container">
-            <div>
-              <a>
-                <i className="fa fa-heart" aria-hidden="true"></i>
-              </a>
-            </div>
-            <div>
-              <a>
-                <i className="fa fa-comments" aria-hidden="true"></i>
-              </a>
-            </div>
-            <div>
-              <a>
-                <i className="fa fa-eye" aria-hidden="true"></i>
-              </a>
-            </div>
-             {/* <div className='addpost-item-link'> 
+        <div className="post-love-comment-views-container">
+          <div>
+            <a>
+              <i className="fa fa-heart" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div>
+            <a>
+              <i className="fa fa-comments" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div>
+            <a>
+              <i className="fa fa-eye" aria-hidden="true"></i>
+            </a>
+          </div>
+          {/* <div className='addpost-item-link'> 
                         <Link
                           to="/blog/addpost"
                           style={{
@@ -68,12 +60,8 @@ export const Post = (props) => {
                         </Link>
                         <span>Add Post</span>
                       </div> */}
-          </div>
-       
+        </div>
       </div>
     </div>
   )
 }
-
-
-

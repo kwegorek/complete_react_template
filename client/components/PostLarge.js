@@ -4,22 +4,16 @@ import {connect} from 'react-redux'
 import {gotInteractions, addLikeThunk} from '../../store/userInteractionReducer'
 import {gotPosts, getOnePostThunk} from '../../store/blogReducer'
 import {Link, withRouter} from 'react-router-dom'
-
 class PostLarge extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {likes: null}
-
     this.handleClickInteraction = this.handleClickInteraction.bind(this)
   }
-
   componentDidMount() {
     this.props.gotPosts()
     this.props.gotInteractions()
-
   }
-
   handleClickInteraction(e) {
     let currentClicked = e.target.id
     var ifCLickedHeart = localStorage.getItem(currentClicked)
@@ -28,52 +22,36 @@ class PostLarge extends React.Component {
         return el.likes
       })
       .join('')
-
     console.log(num, 'num-------r----------t')
 
-    // this.setState({
-    //   likesNum:Number(num)+1
-    // })
-
     localStorage.clear()
-
-    console.log(ifCLickedHeart, 'data')
 
     if (currentClicked === 'heart') {
       localStorage.setItem(currentClicked, 'heart')
 
-      //  console.log(this.props.likes, 'this.props.likes')
-      //   this.props.gotInteractions()
-      // let num = this.props.currentLikesNumber +1;
-
       let obj = {likes: Number(num) + 1}
-      console.log('obj', obj)
+
       this.props.addLikeThunk(obj)
     } else if (currentClicked === 'comments' && !ifCLickedHeart) {
       localStorage.setItem(currentClicked, 'comments')
     } else if (currentClicked === 'seen' && !ifCLickedHeart) {
       localStorage.setItem(currentClicked, 'seen')
     }
-
     let currentLikes = this.props.alllikes
       .map(function (el) {
         return el.likes
       })
       .join('')
-
     this.setState({
       likes: Number(currentLikes),
     })
   }
-
   render() {
-
     let likesAll = this.props.alllikes
-    .map(function (el) {
-      return el.likes
-    })
-    .join('')
-
+      .map(function (el) {
+        return el.likes
+      })
+      .join('')
     let id = this.props.match.params.id
     let filtered = this.props.blogReducer.filter(function (el) {
       if (el.id == Number(id)) {
@@ -81,9 +59,6 @@ class PostLarge extends React.Component {
       }
     })
     let post = filtered[0]
-    // console.log(this.props.likes, 'this.props.likes')
-
-    // let heartsNum = this.props.likes.currentLikesState.likes
 
     let heartsNum = true
     return (
@@ -91,16 +66,11 @@ class PostLarge extends React.Component {
         {post ? (
           <div id="blog-item-large" className="col-12 blog-item ">
             <div className="banner-blog large-img-conatiner">
-              <img
-                className="banner-blog-img-large"
-                src={post.imageUrl}
-              ></img>
+              <img className="banner-blog-img-large" src={post.imageUrl}></img>
             </div>
-
             <div className="blog-item-content">
               <div className="title-edited-co ntainer">
                 <div id="title-container-large">{post.title}</div>
-
                 <div className="post-love-comment-views-container">
                   <div>
                     <a>
@@ -110,7 +80,6 @@ class PostLarge extends React.Component {
                         className="fa fa-heart"
                         aria-hidden="true"
                       ></i>
-
                       <span className="number-holder">{Number(likesAll)}</span>
                     </a>
                   </div>
@@ -146,7 +115,6 @@ class PostLarge extends React.Component {
                     {/* <img src={post.imageUrlAdditional1}></img> */}
                   </div>
                   <div id="content-container-large">{post.contentPar5}</div>
-
                   {/* <iframe width="800" height="600" frameborder="0" scrolling="no"src={post.iframe}></iframe> */}
                 </div>
               </div>
@@ -163,7 +131,6 @@ const mapStateToProps = (state) => {
     alllikes: state.userInteractionReducer.alllikes,
   }
 }
-
 const mapDispatchToProps = (dispatch) => {
   return {
     gotPosts: () => dispatch(gotPosts()),
@@ -171,5 +138,4 @@ const mapDispatchToProps = (dispatch) => {
     addLikeThunk: (val) => dispatch(addLikeThunk(val)),
   }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(PostLarge)

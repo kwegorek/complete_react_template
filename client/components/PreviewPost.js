@@ -14,7 +14,7 @@ class PreviewPost extends React.Component {
   }
 
   componentDidMount(){
-      console.log(this.props.previewPost)
+     
   }
 
 

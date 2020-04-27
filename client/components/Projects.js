@@ -29,7 +29,6 @@ export const Projects = ({
   }
 
   let translationVersion = returnLanguageVersion(btnPL, btnEN, btnDE)
-  console.log(translationVersion, 'translationVersion')
 
   return (
     <div id="projects-href" className="content-project-container">

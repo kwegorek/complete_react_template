@@ -24,12 +24,7 @@ class ContactForm extends React.Component {
     let entranslation = this.props.enTranslation
     let detranslation = this.props.deTranslation
 
-    console.log(
-      currentPlState,
-      currentEnState,
-      currentDeState,
-      'currentDeState'
-    )
+   
 
     function returnLanguageVersion(currentPlState, currentDeState) {
       if (currentPlState === true) {
